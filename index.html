@@ -1,0 +1,966 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Do Zero ao Lucro — Oferta Especial R$47</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;700;800&family=DM+Sans:ital,wght@0,300;0,400;0,500;1,300&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --gold: #f0b429;
+    --gold-dim: #c48f1a;
+    --bg: #080808;
+    --bg2: #0f0f0f;
+    --bg3: #161616;
+    --text: #f0ede8;
+    --muted: #7a7570;
+    --border: #222;
+  }
+
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    background: var(--bg);
+    color: var(--text);
+    font-family: 'DM Sans', sans-serif;
+    font-size: 16px;
+    line-height: 1.6;
+    overflow-x: hidden;
+  }
+
+  /* ─── TICKER ─── */
+  .ticker {
+    background: var(--gold);
+    color: #000;
+    font-family: 'Syne', sans-serif;
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: .12em;
+    text-transform: uppercase;
+    overflow: hidden;
+    padding: 8px 0;
+    white-space: nowrap;
+  }
+  .ticker-inner {
+    display: inline-flex;
+    animation: ticker 22s linear infinite;
+    gap: 0;
+  }
+  .ticker-inner span { padding: 0 2.5rem; }
+  @keyframes ticker { from { transform: translateX(0) } to { transform: translateX(-50%) } }
+
+  /* ─── HERO ─── */
+  .hero {
+    min-height: 100svh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 4rem 1.5rem 3rem;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .hero::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(ellipse 80% 60% at 50% 30%, rgba(240,180,41,.10) 0%, transparent 70%);
+    pointer-events: none;
+  }
+
+  .hero::after {
+    content: '';
+    position: absolute;
+    bottom: 0; left: 0; right: 0;
+    height: 1px;
+    background: linear-gradient(90deg, transparent, var(--gold), transparent);
+    opacity: .4;
+  }
+
+  .promo-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: .5rem;
+    border: 1px solid var(--gold);
+    border-radius: 999px;
+    padding: .35rem 1rem;
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: .1em;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 2rem;
+    animation: fadeDown .7s ease both;
+  }
+
+  .promo-badge::before {
+    content: '';
+    width: 6px; height: 6px;
+    background: var(--gold);
+    border-radius: 50%;
+    animation: pulse 1.5s ease infinite;
+  }
+
+  @keyframes pulse { 0%,100%{opacity:1;transform:scale(1)} 50%{opacity:.4;transform:scale(1.4)} }
+
+  .hero h1 {
+    font-family: 'Syne', sans-serif;
+    font-size: clamp(3rem, 10vw, 7rem);
+    font-weight: 800;
+    line-height: .92;
+    letter-spacing: -.02em;
+    margin-bottom: 1.5rem;
+    animation: fadeUp .8s .1s ease both;
+  }
+
+  .hero h1 em {
+    font-style: normal;
+    color: var(--gold);
+    display: block;
+  }
+
+  .hero-sub {
+    font-size: clamp(1rem, 2.5vw, 1.25rem);
+    font-weight: 300;
+    color: #aaa;
+    max-width: 560px;
+    margin: 0 auto 2.5rem;
+    animation: fadeUp .8s .2s ease both;
+  }
+
+  .hero-sub strong { color: var(--text); font-weight: 500; }
+
+  .price-block {
+    animation: fadeUp .8s .3s ease both;
+    margin-bottom: 2rem;
+  }
+
+  .price-old {
+    font-size: .95rem;
+    color: var(--muted);
+    text-decoration: line-through;
+    margin-bottom: .25rem;
+  }
+
+  .price-new {
+    font-family: 'Syne', sans-serif;
+    font-size: clamp(3rem, 8vw, 5rem);
+    font-weight: 800;
+    color: var(--gold);
+    line-height: 1;
+  }
+
+  .price-new sup { font-size: 1.4rem; vertical-align: super; }
+  .price-new small { font-size: 1.2rem; font-weight: 400; color: #999; }
+
+  .cta-btn {
+    display: inline-block;
+    background: var(--gold);
+    color: #000;
+    font-family: 'Syne', sans-serif;
+    font-size: 1rem;
+    font-weight: 700;
+    letter-spacing: .06em;
+    text-transform: uppercase;
+    text-decoration: none;
+    padding: 1.1rem 3rem;
+    border-radius: 4px;
+    transition: transform .2s, box-shadow .2s, background .2s;
+    box-shadow: 0 0 0 0 rgba(240,180,41,0);
+    animation: fadeUp .8s .4s ease both;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .cta-btn::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(135deg,rgba(255,255,255,.2),transparent);
+    opacity: 0;
+    transition: opacity .2s;
+  }
+
+  .cta-btn:hover {
+    transform: translateY(-2px) scale(1.02);
+    box-shadow: 0 8px 40px rgba(240,180,41,.4);
+    background: #ffc93d;
+  }
+
+  .cta-btn:hover::after { opacity: 1; }
+
+  .guarantee-line {
+    margin-top: 1.2rem;
+    font-size: .8rem;
+    color: var(--muted);
+    animation: fadeUp .8s .5s ease both;
+    letter-spacing: .04em;
+  }
+
+  /* ─── COUNTDOWN ─── */
+  .countdown-bar {
+    background: var(--bg3);
+    border-top: 1px solid var(--border);
+    border-bottom: 1px solid var(--border);
+    padding: 1.25rem 1.5rem;
+    text-align: center;
+  }
+
+  .countdown-label {
+    font-size: .7rem;
+    letter-spacing: .12em;
+    text-transform: uppercase;
+    color: var(--muted);
+    margin-bottom: .5rem;
+  }
+
+  .countdown {
+    display: flex;
+    justify-content: center;
+    gap: 1.5rem;
+  }
+
+  .cd-unit {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: .2rem;
+  }
+
+  .cd-num {
+    font-family: 'Syne', sans-serif;
+    font-size: 2rem;
+    font-weight: 800;
+    color: var(--gold);
+    min-width: 2.5ch;
+    text-align: center;
+    line-height: 1;
+  }
+
+  .cd-label {
+    font-size: .65rem;
+    letter-spacing: .1em;
+    text-transform: uppercase;
+    color: var(--muted);
+  }
+
+  .cd-sep {
+    font-family: 'Syne', sans-serif;
+    font-size: 2rem;
+    font-weight: 800;
+    color: var(--muted);
+    align-self: flex-start;
+    padding-top: .05rem;
+  }
+
+  /* ─── SECTIONS ─── */
+  section {
+    padding: 5rem 1.5rem;
+    max-width: 860px;
+    margin: 0 auto;
+  }
+
+  .section-label {
+    font-size: .7rem;
+    letter-spacing: .15em;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 1.2rem;
+    display: flex;
+    align-items: center;
+    gap: .75rem;
+  }
+
+  .section-label::after {
+    content: '';
+    flex: 1;
+    height: 1px;
+    background: var(--border);
+  }
+
+  h2 {
+    font-family: 'Syne', sans-serif;
+    font-size: clamp(2rem, 5vw, 3.2rem);
+    font-weight: 800;
+    line-height: 1.05;
+    letter-spacing: -.02em;
+    margin-bottom: 1.5rem;
+  }
+
+  h2 em {
+    font-style: normal;
+    color: var(--gold);
+  }
+
+  /* ─── PROBLEMA ─── */
+  .pain-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1px;
+    border: 1px solid var(--border);
+    margin-top: 2rem;
+    background: var(--border);
+  }
+
+  .pain-item {
+    background: var(--bg2);
+    padding: 1.75rem;
+    transition: background .3s;
+  }
+
+  .pain-item:hover { background: var(--bg3); }
+
+  .pain-icon {
+    font-size: 1.5rem;
+    margin-bottom: .75rem;
+  }
+
+  .pain-item h3 {
+    font-family: 'Syne', sans-serif;
+    font-size: 1rem;
+    font-weight: 700;
+    margin-bottom: .4rem;
+  }
+
+  .pain-item p { font-size: .875rem; color: var(--muted); line-height: 1.5; }
+
+  /* ─── MODULES ─── */
+  .modules-grid {
+    display: grid;
+    gap: 1px;
+    background: var(--border);
+    border: 1px solid var(--border);
+    margin-top: 2rem;
+  }
+
+  .module-item {
+    background: var(--bg2);
+    padding: 1.5rem 1.75rem;
+    display: grid;
+    grid-template-columns: auto 1fr;
+    gap: 1.25rem;
+    align-items: start;
+    cursor: pointer;
+    transition: background .2s;
+    position: relative;
+  }
+
+  .module-item:hover { background: #111; }
+
+  .module-num {
+    font-family: 'Syne', sans-serif;
+    font-size: .75rem;
+    font-weight: 700;
+    color: var(--gold);
+    letter-spacing: .08em;
+    padding-top: .15rem;
+    opacity: .7;
+  }
+
+  .module-title {
+    font-family: 'Syne', sans-serif;
+    font-size: 1rem;
+    font-weight: 700;
+    margin-bottom: .35rem;
+  }
+
+  .module-desc {
+    font-size: .825rem;
+    color: var(--muted);
+    line-height: 1.55;
+  }
+
+  .module-item::after {
+    content: '';
+    position: absolute;
+    left: 0; top: 0; bottom: 0;
+    width: 0;
+    background: var(--gold);
+    transition: width .3s ease;
+  }
+
+  .module-item:hover::after { width: 3px; }
+
+  /* ─── BONUSES ─── */
+  .bonus-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    gap: 1.25rem;
+    margin-top: 2rem;
+  }
+
+  .bonus-card {
+    border: 1px solid var(--border);
+    padding: 1.75rem;
+    position: relative;
+    overflow: hidden;
+    background: var(--bg2);
+    transition: border-color .3s, transform .3s;
+  }
+
+  .bonus-card:hover {
+    border-color: var(--gold);
+    transform: translateY(-3px);
+  }
+
+  .bonus-card::before {
+    content: 'GRÁTIS';
+    position: absolute;
+    top: 1rem; right: 1rem;
+    background: var(--gold);
+    color: #000;
+    font-family: 'Syne', sans-serif;
+    font-size: .6rem;
+    font-weight: 800;
+    letter-spacing: .08em;
+    padding: .2rem .5rem;
+    border-radius: 2px;
+  }
+
+  .bonus-num {
+    font-family: 'Syne', sans-serif;
+    font-size: .7rem;
+    color: var(--muted);
+    letter-spacing: .1em;
+    text-transform: uppercase;
+    margin-bottom: .75rem;
+  }
+
+  .bonus-card h3 {
+    font-family: 'Syne', sans-serif;
+    font-size: 1rem;
+    font-weight: 700;
+    margin-bottom: .5rem;
+  }
+
+  .bonus-card p { font-size: .825rem; color: var(--muted); line-height: 1.5; }
+
+  .bonus-value {
+    margin-top: .75rem;
+    font-size: .75rem;
+    color: var(--muted);
+  }
+
+  .bonus-value s { margin-right: .25rem; }
+  .bonus-value span { color: var(--gold); font-weight: 700; }
+
+  /* ─── PRICING ─── */
+  .pricing-section {
+    max-width: 640px;
+  }
+
+  .pricing-card {
+    border: 1px solid var(--gold);
+    padding: 3rem;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+    background: linear-gradient(135deg, #0f0f0f 0%, #141209 100%);
+  }
+
+  .pricing-card::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(ellipse at 50% 0%, rgba(240,180,41,.08), transparent 60%);
+    pointer-events: none;
+  }
+
+  .promo-tag {
+    display: inline-block;
+    background: var(--gold);
+    color: #000;
+    font-family: 'Syne', sans-serif;
+    font-size: .7rem;
+    font-weight: 800;
+    letter-spacing: .12em;
+    text-transform: uppercase;
+    padding: .3rem .9rem;
+    border-radius: 2px;
+    margin-bottom: 1.5rem;
+  }
+
+  .pricing-card .price-old {
+    font-size: 1rem;
+    margin-bottom: .5rem;
+  }
+
+  .pricing-card .price-new {
+    font-size: clamp(3.5rem, 10vw, 5.5rem);
+    margin-bottom: .5rem;
+  }
+
+  .pricing-instalment {
+    font-size: .85rem;
+    color: var(--muted);
+    margin-bottom: 2rem;
+  }
+
+  .pricing-card .cta-btn {
+    display: block;
+    width: 100%;
+    animation: none;
+    font-size: 1.05rem;
+  }
+
+  .pricing-features {
+    margin-top: 2rem;
+    display: flex;
+    flex-direction: column;
+    gap: .6rem;
+    text-align: left;
+  }
+
+  .feat {
+    display: flex;
+    align-items: center;
+    gap: .75rem;
+    font-size: .875rem;
+    color: var(--muted);
+  }
+
+  .feat::before {
+    content: '✓';
+    color: var(--gold);
+    font-weight: 700;
+    font-size: .9rem;
+    flex-shrink: 0;
+  }
+
+  /* ─── GUARANTEE ─── */
+  .guarantee-section {
+    max-width: 640px;
+  }
+
+  .guarantee-box {
+    border: 1px solid var(--border);
+    padding: 2.5rem;
+    display: flex;
+    gap: 2rem;
+    align-items: flex-start;
+    background: var(--bg2);
+  }
+
+  .guarantee-icon {
+    font-size: 3rem;
+    flex-shrink: 0;
+    line-height: 1;
+  }
+
+  .guarantee-box h3 {
+    font-family: 'Syne', sans-serif;
+    font-size: 1.2rem;
+    font-weight: 800;
+    margin-bottom: .5rem;
+  }
+
+  .guarantee-box p { font-size: .875rem; color: var(--muted); line-height: 1.6; }
+
+  /* ─── FOOTER CTA ─── */
+  .footer-cta {
+    background: var(--gold);
+    padding: 4rem 1.5rem;
+    text-align: center;
+  }
+
+  .footer-cta h2 {
+    color: #000;
+    margin-bottom: 1.5rem;
+    font-size: clamp(2rem, 5vw, 3rem);
+  }
+
+  .footer-cta .cta-btn {
+    background: #000;
+    color: var(--gold);
+    animation: none;
+    box-shadow: 0 0 0 2px #000;
+  }
+
+  .footer-cta .cta-btn:hover {
+    background: #111;
+    box-shadow: 0 8px 30px rgba(0,0,0,.4);
+  }
+
+  .footer-note {
+    margin-top: 1rem;
+    font-size: .8rem;
+    color: rgba(0,0,0,.5);
+  }
+
+  /* ─── DIVIDER ─── */
+  .divider {
+    width: 100%;
+    height: 1px;
+    background: linear-gradient(90deg, transparent, var(--border), transparent);
+    max-width: 860px;
+    margin: 0 auto;
+  }
+
+  /* ─── SCROLL ANIMATIONS ─── */
+  .reveal {
+    opacity: 0;
+    transform: translateY(32px);
+    transition: opacity .65s ease, transform .65s ease;
+  }
+
+  .reveal.visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  .reveal-stagger > * {
+    opacity: 0;
+    transform: translateY(24px);
+    transition: opacity .5s ease, transform .5s ease;
+  }
+
+  .reveal-stagger.visible > *:nth-child(1) { opacity: 1; transform: none; transition-delay: 0s; }
+  .reveal-stagger.visible > *:nth-child(2) { opacity: 1; transform: none; transition-delay: .1s; }
+  .reveal-stagger.visible > *:nth-child(3) { opacity: 1; transform: none; transition-delay: .2s; }
+  .reveal-stagger.visible > *:nth-child(4) { opacity: 1; transform: none; transition-delay: .3s; }
+  .reveal-stagger.visible > *:nth-child(5) { opacity: 1; transform: none; transition-delay: .4s; }
+  .reveal-stagger.visible > *:nth-child(6) { opacity: 1; transform: none; transition-delay: .5s; }
+  .reveal-stagger.visible > *:nth-child(7) { opacity: 1; transform: none; transition-delay: .6s; }
+  .reveal-stagger.visible > *:nth-child(8) { opacity: 1; transform: none; transition-delay: .7s; }
+
+  /* ─── KEYFRAMES ─── */
+  @keyframes fadeUp { from { opacity: 0; transform: translateY(24px); } to { opacity: 1; transform: none; } }
+  @keyframes fadeDown { from { opacity: 0; transform: translateY(-16px); } to { opacity: 1; transform: none; } }
+
+  /* ─── RESPONSIVE ─── */
+  @media (max-width: 600px) {
+    .pain-grid { grid-template-columns: 1fr; }
+    .guarantee-box { flex-direction: column; gap: 1rem; }
+    .pricing-card { padding: 2rem 1.5rem; }
+    section { padding: 3.5rem 1.25rem; }
+  }
+
+  /* ─── STICKY CTA ─── */
+  .sticky-cta {
+    position: fixed;
+    bottom: 1.5rem;
+    left: 50%;
+    transform: translateX(-50%) translateY(120px);
+    z-index: 999;
+    background: var(--gold);
+    color: #000;
+    font-family: 'Syne', sans-serif;
+    font-weight: 800;
+    font-size: .85rem;
+    letter-spacing: .06em;
+    text-transform: uppercase;
+    text-decoration: none;
+    padding: .9rem 2.2rem;
+    border-radius: 999px;
+    box-shadow: 0 8px 40px rgba(240,180,41,.5);
+    transition: transform .4s cubic-bezier(.34,1.56,.64,1), box-shadow .3s;
+    white-space: nowrap;
+  }
+
+  .sticky-cta.show { transform: translateX(-50%) translateY(0); }
+  .sticky-cta:hover { box-shadow: 0 12px 50px rgba(240,180,41,.65); }
+
+  /* scroll bar */
+  ::-webkit-scrollbar { width: 4px; }
+  ::-webkit-scrollbar-track { background: var(--bg); }
+  ::-webkit-scrollbar-thumb { background: var(--gold); border-radius: 2px; }
+</style>
+</head>
+<body>
+
+<!-- TICKER -->
+<div class="ticker">
+  <div class="ticker-inner">
+    <span>🔥 OFERTA ESPECIAL POR TEMPO LIMITADO</span>
+    <span>⚡ R$47 — APENAS HOJE</span>
+    <span>✅ GARANTIA 7 DIAS</span>
+    <span>📈 DO ZERO AO LUCRO</span>
+    <span>🔒 ACESSO IMEDIATO</span>
+    <span>🔥 OFERTA ESPECIAL POR TEMPO LIMITADO</span>
+    <span>⚡ R$47 — APENAS HOJE</span>
+    <span>✅ GARANTIA 7 DIAS</span>
+    <span>📈 DO ZERO AO LUCRO</span>
+    <span>🔒 ACESSO IMEDIATO</span>
+  </div>
+</div>
+
+<!-- HERO -->
+<section class="hero" style="max-width:none; padding-top:5rem;">
+  <div class="promo-badge">Promoção relâmpago — acesso imediato</div>
+
+  <h1>
+    Do Zero<br>
+    <em>ao Lucro</em>
+  </h1>
+
+  <p class="hero-sub">
+    O método completo para construir renda do zero em 2026 — <strong>8 módulos, sem enrolação, resultado em meses.</strong>
+  </p>
+
+  <div class="price-block">
+    <p class="price-old">De R$ 97,00</p>
+    <div class="price-new"><sup>R$</sup>47<small>,00</small></div>
+  </div>
+
+  <a href="https://pay.kiwify.com.br/7l9TcTt" class="cta-btn">
+    Quero Acesso por R$47 →
+  </a>
+  <p class="guarantee-line">🔒 7 dias de garantia incondicional · Pagamento 100% seguro</p>
+</section>
+
+<!-- COUNTDOWN -->
+<div class="countdown-bar">
+  <p class="countdown-label">A oferta encerra em</p>
+  <div class="countdown">
+    <div class="cd-unit">
+      <span class="cd-num" id="cd-h">00</span>
+      <span class="cd-label">horas</span>
+    </div>
+    <div class="cd-sep">:</div>
+    <div class="cd-unit">
+      <span class="cd-num" id="cd-m">00</span>
+      <span class="cd-label">min</span>
+    </div>
+    <div class="cd-sep">:</div>
+    <div class="cd-unit">
+      <span class="cd-num" id="cd-s">00</span>
+      <span class="cd-label">seg</span>
+    </div>
+  </div>
+</div>
+
+<!-- PROBLEMA -->
+<div class="divider"></div>
+<section>
+  <div class="section-label reveal">O problema</div>
+  <h2 class="reveal">Você não é preguiçoso.<br><em>Falta o mapa certo.</em></h2>
+  <p style="color: var(--muted); max-width: 600px; margin-bottom: 0;" class="reveal">
+    Enquanto alguns aprendiam sobre dinheiro e habilidades que o mercado paga bem — a maioria aprende a ser funcionário. Não é sua culpa. Mas existe uma saída.
+  </p>
+
+  <div class="pain-grid reveal-stagger" style="margin-top: 2rem;">
+    <div class="pain-item">
+      <div class="pain-icon">💸</div>
+      <h3>Trabalha muito e sobra pouco</h3>
+      <p>Você troca horas por dinheiro, mas o dinheiro nunca chega no fim do mês.</p>
+    </div>
+    <div class="pain-item">
+      <div class="pain-icon">🎯</div>
+      <h3>Não sabe por onde começar</h3>
+      <p>Cada guru fala uma coisa diferente. Falta um caminho claro.</p>
+    </div>
+    <div class="pain-item">
+      <div class="pain-icon">⏰</div>
+      <h3>O tempo está passando</h3>
+      <p>Vê pessoas crescendo e fica se perguntando o que elas sabem que você não.</p>
+    </div>
+    <div class="pain-item">
+      <div class="pain-icon">😤</div>
+      <h3>Cansado de promessas</h3>
+      <p>Já viu muita coisa que prometia e não entregou nada de concreto.</p>
+    </div>
+  </div>
+</section>
+
+<!-- MÓDULOS -->
+<div class="divider"></div>
+<section>
+  <div class="section-label reveal">O conteúdo</div>
+  <h2 class="reveal">8 módulos.<br><em>Um caminho.</em></h2>
+
+  <div class="modules-grid reveal-stagger" style="margin-top: 2rem;">
+    <div class="module-item">
+      <span class="module-num">MOD 01</span>
+      <div>
+        <div class="module-title">Mentalidade de Quem Vence</div>
+        <p class="module-desc">Por que você está pobre (sem julgamento, com solução). Como o dinheiro funciona de verdade. Construindo a identidade de quem prospera.</p>
+      </div>
+    </div>
+    <div class="module-item">
+      <span class="module-num">MOD 02</span>
+      <div>
+        <div class="module-title">Estabilidade Antes de Escala</div>
+        <p class="module-desc">Como gerar renda imediata do zero. Os melhores bicos que pagam rápido em 2026. Como cortar gastos sem sofrer e montar sua reserva.</p>
+      </div>
+    </div>
+    <div class="module-item">
+      <span class="module-num">MOD 03</span>
+      <div>
+        <div class="module-title">Escolhendo Sua Habilidade</div>
+        <p class="module-desc">As 5 habilidades mais valiosas do mercado. Tráfego pago, copywriting ou vendas — como descobrir qual é a certa pra você.</p>
+      </div>
+    </div>
+    <div class="module-item">
+      <span class="module-num">MOD 04</span>
+      <div>
+        <div class="module-title">Aprendendo em Velocidade Máxima</div>
+        <p class="module-desc">Como aprender qualquer coisa 3x mais rápido. O método de 90 dias para dominar uma habilidade e construir portfólio sem clientes.</p>
+      </div>
+    </div>
+    <div class="module-item">
+      <span class="module-num">MOD 05</span>
+      <div>
+        <div class="module-title">Primeiros Clientes</div>
+        <p class="module-desc">Como vender mesmo sem experiência. Scripts de abordagem que funcionam. Onde encontrar clientes sem gastar nada e como precificar seu trabalho.</p>
+      </div>
+    </div>
+    <div class="module-item">
+      <span class="module-num">MOD 06</span>
+      <div>
+        <div class="module-title">Escalando Resultados</div>
+        <p class="module-desc">Da hora trocada por dinheiro para o sistema. Como cobrar mais pelo mesmo trabalho. Criando a primeira fonte de renda passiva.</p>
+      </div>
+    </div>
+    <div class="module-item">
+      <span class="module-num">MOD 07</span>
+      <div>
+        <div class="module-title">Educação Financeira Real</div>
+        <p class="module-desc">O que não ensinam na escola. Juros compostos, onde colocar o primeiro dinheiro e armadilhas que mantêm você pobre.</p>
+      </div>
+    </div>
+    <div class="module-item">
+      <span class="module-num">MOD 08</span>
+      <div>
+        <div class="module-title">Sustentando o Crescimento</div>
+        <p class="module-desc">Como manter disciplina quando a empolgação passa. Construindo rede de contatos e o plano de 2 anos para liberdade real.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- BÔNUS -->
+<div class="divider"></div>
+<section>
+  <div class="section-label reveal">Incluído no plano</div>
+  <h2 class="reveal">Bônus que <em>valem o dobro.</em></h2>
+
+  <div class="bonus-grid">
+    <div class="bonus-card reveal">
+      <div class="bonus-num">Bônus 01</div>
+      <h3>Planilha de Controle Financeiro</h3>
+      <p>Pronta pra usar, controla entradas, saídas, metas e investimentos. Simples o suficiente pra quem odeia planilha.</p>
+      <div class="bonus-value"><s>R$97</s><span>GRÁTIS</span></div>
+    </div>
+    <div class="bonus-card reveal">
+      <div class="bonus-num">Bônus 02</div>
+      <h3>10 Scripts de Vendas Prontos</h3>
+      <p>Scripts de abordagem testados para conseguir clientes via WhatsApp, Instagram e e-mail. Copia, adapta e envia.</p>
+      <div class="bonus-value"><s>R$147</s><span>GRÁTIS</span></div>
+    </div>
+    <div class="bonus-card reveal">
+      <div class="bonus-num">Bônus 03</div>
+      <h3>Comunidade Exclusiva</h3>
+      <p>Grupo privado com outros alunos, lives mensais de perguntas e respostas, e suporte direto para dúvidas.</p>
+      <div class="bonus-value"><s>R$197</s><span>GRÁTIS</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- PRICING -->
+<div class="divider"></div>
+<section class="pricing-section" style="margin: 0 auto;">
+  <div class="section-label reveal">Oferta especial</div>
+  <h2 class="reveal">Tudo isso por<br><em>R$47.</em></h2>
+
+  <div class="pricing-card reveal" style="margin-top: 2rem;">
+    <div class="promo-tag">⚡ Promoção por tempo limitado</div>
+
+    <p class="price-old">De R$ 97,00</p>
+    <div class="price-new"><sup>R$</sup>47<small>,00</small></div>
+    <p class="pricing-instalment">pagamento único · acesso imediato e vitalício</p>
+
+    <a href="https://pay.kiwify.com.br/7l9TcTt" class="cta-btn">
+      Garantir meu acesso agora →
+    </a>
+
+    <div class="pricing-features">
+      <div class="feat">8 módulos completos — do zero ao lucro</div>
+      <div class="feat">Planilha de controle financeiro (valor R$97)</div>
+      <div class="feat">10 scripts de vendas prontos (valor R$147)</div>
+      <div class="feat">Comunidade exclusiva + lives mensais (valor R$197)</div>
+      <div class="feat">Acesso vitalício e futuras atualizações</div>
+      <div class="feat">Garantia incondicional de 7 dias</div>
+    </div>
+  </div>
+</section>
+
+<!-- GARANTIA -->
+<div class="divider" style="margin-top: 3rem;"></div>
+<section class="guarantee-section" style="margin: 0 auto;">
+  <div class="guarantee-box reveal">
+    <div class="guarantee-icon">🛡️</div>
+    <div>
+      <h3>Garantia de 7 dias</h3>
+      <p>
+        Se por qualquer motivo você não ficar satisfeito, basta enviar um e-mail em até 7 dias e devolvemos 100% do seu dinheiro. Sem burocracia, sem perguntas. O risco é todo nosso.
+      </p>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER CTA -->
+<div class="footer-cta">
+  <h2>A decisão certa<br>está aqui.</h2>
+  <a href="https://pay.kiwify.com.br/7l9TcTt" class="cta-btn" style="animation:none;">
+    Quero mudar minha vida por R$47 →
+  </a>
+  <p class="footer-note">🔒 Pagamento seguro · Acesso imediato · Garantia 7 dias</p>
+</div>
+
+<!-- STICKY CTA -->
+<a href="https://pay.kiwify.com.br/7l9TcTt" class="sticky-cta" id="sticky">
+  ⚡ Garantir R$47 agora
+</a>
+
+<script>
+  // ─── SCROLL REVEAL
+  const revealEls = document.querySelectorAll('.reveal, .reveal-stagger');
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(e => {
+      if (e.isIntersecting) {
+        e.target.classList.add('visible');
+        observer.unobserve(e.target);
+      }
+    });
+  }, { threshold: 0.12 });
+  revealEls.forEach(el => observer.observe(el));
+
+  // ─── STICKY CTA
+  const sticky = document.getElementById('sticky');
+  const hero = document.querySelector('.hero');
+  const stickyObs = new IntersectionObserver((entries) => {
+    if (!entries[0].isIntersecting) sticky.classList.add('show');
+    else sticky.classList.remove('show');
+  }, { threshold: 0.2 });
+  stickyObs.observe(hero);
+
+  // ─── COUNTDOWN (23h59m + random seconds for urgency)
+  const stored = sessionStorage.getItem('cdEnd');
+  let endTime;
+  if (stored) {
+    endTime = parseInt(stored);
+  } else {
+    // 23 hours 59 minutes from now
+    endTime = Date.now() + (23 * 60 * 60 + 59 * 60 + 47) * 1000;
+    sessionStorage.setItem('cdEnd', endTime);
+  }
+
+  function tick() {
+    const diff = Math.max(0, endTime - Date.now());
+    const h = Math.floor(diff / 3600000);
+    const m = Math.floor((diff % 3600000) / 60000);
+    const s = Math.floor((diff % 60000) / 1000);
+    document.getElementById('cd-h').textContent = String(h).padStart(2,'0');
+    document.getElementById('cd-m').textContent = String(m).padStart(2,'0');
+    document.getElementById('cd-s').textContent = String(s).padStart(2,'0');
+    if (diff > 0) requestAnimationFrame(tick);
+  }
+  tick();
+</script>
+</body>
+</html>
