@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+!DOCTYPE html>
 <html lang="pt-BR">
 <head>
 <meta charset="UTF-8">
@@ -17,10 +17,10 @@
     --muted: #7a7570;
     --border: #222;
   }
-
+ 
   *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
   html { scroll-behavior: smooth; }
-
+ 
   body {
     background: var(--bg);
     color: var(--text);
@@ -29,7 +29,7 @@
     line-height: 1.6;
     overflow-x: hidden;
   }
-
+ 
   /* ─── TICKER ─── */
   .ticker {
     background: var(--gold);
@@ -49,7 +49,7 @@
   }
   .ticker-inner span { padding: 0 2.5rem; }
   @keyframes ticker { from { transform: translateX(0) } to { transform: translateX(-50%) } }
-
+ 
   /* ─── HERO ─── */
   .hero {
     min-height: 100svh;
@@ -62,7 +62,7 @@
     position: relative;
     overflow: hidden;
   }
-
+ 
   .hero::before {
     content: '';
     position: absolute;
@@ -70,7 +70,7 @@
     background: radial-gradient(ellipse 80% 60% at 50% 30%, rgba(240,180,41,.10) 0%, transparent 70%);
     pointer-events: none;
   }
-
+ 
   .hero::after {
     content: '';
     position: absolute;
@@ -79,7 +79,7 @@
     background: linear-gradient(90deg, transparent, var(--gold), transparent);
     opacity: .4;
   }
-
+ 
   .promo-badge {
     display: inline-flex;
     align-items: center;
@@ -95,7 +95,7 @@
     margin-bottom: 2rem;
     animation: fadeDown .7s ease both;
   }
-
+ 
   .promo-badge::before {
     content: '';
     width: 6px; height: 6px;
@@ -103,9 +103,9 @@
     border-radius: 50%;
     animation: pulse 1.5s ease infinite;
   }
-
+ 
   @keyframes pulse { 0%,100%{opacity:1;transform:scale(1)} 50%{opacity:.4;transform:scale(1.4)} }
-
+ 
   /* ─── NOVO: Linha "Quem é para você" ─── */
   .for-whom {
     display: inline-block;
@@ -119,7 +119,7 @@
     margin-bottom: 1.5rem;
     animation: fadeUp .8s .05s ease both;
   }
-
+ 
   .hero h1 {
     font-family: 'Syne', sans-serif;
     font-size: clamp(1.6rem, 3.8vw, 3.2rem);
@@ -130,12 +130,12 @@
     max-width: 680px;
     animation: fadeUp .8s .1s ease both;
   }
-
+ 
   .hero h1 em {
     font-style: normal;
     color: var(--gold);
   }
-
+ 
   /* ─── 3D CANVAS ─── */
   #hero-canvas {
     position: absolute;
@@ -145,12 +145,12 @@
     pointer-events: none;
     z-index: 0;
   }
-
+ 
   .hero > *:not(#hero-canvas) {
     position: relative;
     z-index: 1;
   }
-
+ 
   .hero-sub {
     font-size: clamp(1rem, 2.2vw, 1.2rem);
     font-weight: 300;
@@ -160,9 +160,9 @@
     animation: fadeUp .8s .2s ease both;
     line-height: 1.7;
   }
-
+ 
   .hero-sub strong { color: var(--text); font-weight: 500; }
-
+ 
   /* ─── NOVO: Bloco de prova social rápida ─── */
   .social-proof-strip {
     display: flex;
@@ -173,7 +173,7 @@
     animation: fadeUp .8s .25s ease both;
     flex-wrap: wrap;
   }
-
+ 
   .sp-item {
     display: flex;
     align-items: center;
@@ -182,27 +182,27 @@
     color: var(--muted);
     letter-spacing: .04em;
   }
-
+ 
   .sp-item strong { color: var(--text); }
-
+ 
   .sp-dot {
     width: 3px; height: 3px;
     background: var(--border);
     border-radius: 50%;
   }
-
+ 
   .price-block {
     animation: fadeUp .8s .3s ease both;
     margin-bottom: 2rem;
   }
-
+ 
   .price-old {
     font-size: .95rem;
     color: var(--muted);
     text-decoration: line-through;
     margin-bottom: .25rem;
   }
-
+ 
   .price-new {
     font-family: 'Syne', sans-serif;
     font-size: clamp(3rem, 8vw, 5rem);
@@ -210,10 +210,10 @@
     color: var(--gold);
     line-height: 1;
   }
-
+ 
   .price-new sup { font-size: 1.4rem; vertical-align: super; }
   .price-new small { font-size: 1.2rem; font-weight: 400; color: #999; }
-
+ 
   .cta-btn {
     display: inline-block;
     background: var(--gold);
@@ -232,7 +232,7 @@
     position: relative;
     overflow: hidden;
   }
-
+ 
   .cta-btn::after {
     content: '';
     position: absolute;
@@ -241,15 +241,15 @@
     opacity: 0;
     transition: opacity .2s;
   }
-
+ 
   .cta-btn:hover {
     transform: translateY(-2px) scale(1.02);
     box-shadow: 0 8px 40px rgba(240,180,41,.4);
     background: #ffc93d;
   }
-
+ 
   .cta-btn:hover::after { opacity: 1; }
-
+ 
   .guarantee-line {
     margin-top: 1.2rem;
     font-size: .8rem;
@@ -257,7 +257,7 @@
     animation: fadeUp .8s .5s ease both;
     letter-spacing: .04em;
   }
-
+ 
   /* ─── COUNTDOWN ─── */
   .countdown-bar {
     background: var(--bg3);
@@ -266,7 +266,7 @@
     padding: 1.25rem 1.5rem;
     text-align: center;
   }
-
+ 
   .countdown-label {
     font-size: .7rem;
     letter-spacing: .12em;
@@ -274,20 +274,20 @@
     color: var(--muted);
     margin-bottom: .5rem;
   }
-
+ 
   .countdown {
     display: flex;
     justify-content: center;
     gap: 1.5rem;
   }
-
+ 
   .cd-unit {
     display: flex;
     flex-direction: column;
     align-items: center;
     gap: .2rem;
   }
-
+ 
   .cd-num {
     font-family: 'Syne', sans-serif;
     font-size: 2rem;
@@ -297,14 +297,14 @@
     text-align: center;
     line-height: 1;
   }
-
+ 
   .cd-label {
     font-size: .65rem;
     letter-spacing: .1em;
     text-transform: uppercase;
     color: var(--muted);
   }
-
+ 
   .cd-sep {
     font-family: 'Syne', sans-serif;
     font-size: 2rem;
@@ -313,14 +313,14 @@
     align-self: flex-start;
     padding-top: .05rem;
   }
-
+ 
   /* ─── SECTIONS ─── */
   section {
     padding: 5rem 1.5rem;
     max-width: 860px;
     margin: 0 auto;
   }
-
+ 
   .section-label {
     font-size: .7rem;
     letter-spacing: .15em;
@@ -331,14 +331,14 @@
     align-items: center;
     gap: .75rem;
   }
-
+ 
   .section-label::after {
     content: '';
     flex: 1;
     height: 1px;
     background: var(--border);
   }
-
+ 
   h2 {
     font-family: 'Syne', sans-serif;
     font-size: clamp(2rem, 5vw, 3.2rem);
@@ -347,12 +347,12 @@
     letter-spacing: -.02em;
     margin-bottom: 1.5rem;
   }
-
+ 
   h2 em {
     font-style: normal;
     color: var(--gold);
   }
-
+ 
   /* ─── NOVO: Bloco de autoridade ─── */
   .authority-block {
     background: var(--bg2);
@@ -364,7 +364,7 @@
     gap: 1.5rem;
     align-items: flex-start;
   }
-
+ 
   .authority-avatar {
     width: 52px;
     height: 52px;
@@ -379,13 +379,13 @@
     color: #000;
     flex-shrink: 0;
   }
-
+ 
   .authority-text p {
     font-size: .875rem;
     color: var(--muted);
     line-height: 1.6;
   }
-
+ 
   .authority-text strong {
     display: block;
     color: var(--text);
@@ -394,21 +394,21 @@
     margin-bottom: .25rem;
     font-size: .95rem;
   }
-
+ 
   .authority-stats {
     display: flex;
     gap: 1.5rem;
     margin-top: .75rem;
     flex-wrap: wrap;
   }
-
+ 
   .a-stat {
     font-size: .75rem;
     color: var(--muted);
   }
-
+ 
   .a-stat strong { color: var(--gold); font-size: .9rem; }
-
+ 
   /* ─── PROBLEMA ─── */
   .pain-grid {
     display: grid;
@@ -418,26 +418,26 @@
     margin-top: 2rem;
     background: var(--border);
   }
-
+ 
   .pain-item {
     background: var(--bg2);
     padding: 1.75rem;
     transition: background .3s;
   }
-
+ 
   .pain-item:hover { background: var(--bg3); }
-
+ 
   .pain-icon { font-size: 1.5rem; margin-bottom: .75rem; }
-
+ 
   .pain-item h3 {
     font-family: 'Syne', sans-serif;
     font-size: 1rem;
     font-weight: 700;
     margin-bottom: .4rem;
   }
-
+ 
   .pain-item p { font-size: .875rem; color: var(--muted); line-height: 1.5; }
-
+ 
   /* ─── NOVO: O que você vai saber fazer ─── */
   .outcome-grid {
     display: grid;
@@ -445,7 +445,7 @@
     gap: 1rem;
     margin-top: 2rem;
   }
-
+ 
   .outcome-item {
     display: flex;
     gap: .75rem;
@@ -455,9 +455,9 @@
     background: var(--bg2);
     transition: border-color .3s;
   }
-
+ 
   .outcome-item:hover { border-color: rgba(240,180,41,.3); }
-
+ 
   .outcome-check {
     color: var(--gold);
     font-weight: 700;
@@ -465,20 +465,20 @@
     flex-shrink: 0;
     margin-top: .1rem;
   }
-
+ 
   .outcome-item p {
     font-size: .875rem;
     color: var(--muted);
     line-height: 1.5;
   }
-
+ 
   .outcome-item strong {
     display: block;
     color: var(--text);
     font-size: .9rem;
     margin-bottom: .2rem;
   }
-
+ 
   /* ─── MODULES ─── */
   .modules-grid {
     display: grid;
@@ -487,7 +487,7 @@
     border: 1px solid var(--border);
     margin-top: 2rem;
   }
-
+ 
   .module-item {
     background: var(--bg2);
     padding: 1.5rem 1.75rem;
@@ -498,9 +498,9 @@
     transition: background .2s;
     position: relative;
   }
-
+ 
   .module-item:hover { background: #111; }
-
+ 
   .module-num {
     font-family: 'Syne', sans-serif;
     font-size: .75rem;
@@ -510,14 +510,14 @@
     padding-top: .15rem;
     opacity: .7;
   }
-
+ 
   .module-title {
     font-family: 'Syne', sans-serif;
     font-size: 1rem;
     font-weight: 700;
     margin-bottom: .25rem;
   }
-
+ 
   .module-promise {
     font-size: .75rem;
     color: var(--gold);
@@ -525,13 +525,13 @@
     margin-bottom: .3rem;
     letter-spacing: .03em;
   }
-
+ 
   .module-desc {
     font-size: .825rem;
     color: var(--muted);
     line-height: 1.55;
   }
-
+ 
   .module-item::after {
     content: '';
     position: absolute;
@@ -540,9 +540,9 @@
     background: var(--gold);
     transition: width .3s ease;
   }
-
+ 
   .module-item:hover::after { width: 3px; }
-
+ 
   /* ─── BONUSES ─── */
   .bonus-grid {
     display: grid;
@@ -550,7 +550,7 @@
     gap: 1.25rem;
     margin-top: 2rem;
   }
-
+ 
   .bonus-card {
     border: 1px solid var(--border);
     padding: 1.75rem;
@@ -559,9 +559,9 @@
     background: var(--bg2);
     transition: border-color .3s, transform .3s;
   }
-
+ 
   .bonus-card:hover { border-color: var(--gold); transform: translateY(-3px); }
-
+ 
   .bonus-card::before {
     content: 'GRÁTIS';
     position: absolute;
@@ -575,7 +575,7 @@
     padding: .2rem .5rem;
     border-radius: 2px;
   }
-
+ 
   .bonus-num {
     font-family: 'Syne', sans-serif;
     font-size: .7rem;
@@ -584,23 +584,23 @@
     text-transform: uppercase;
     margin-bottom: .75rem;
   }
-
+ 
   .bonus-card h3 {
     font-family: 'Syne', sans-serif;
     font-size: 1rem;
     font-weight: 700;
     margin-bottom: .5rem;
   }
-
+ 
   .bonus-card p { font-size: .825rem; color: var(--muted); line-height: 1.5; }
-
+ 
   .bonus-value { margin-top: .75rem; font-size: .75rem; color: var(--muted); }
   .bonus-value s { margin-right: .25rem; }
   .bonus-value span { color: var(--gold); font-weight: 700; }
-
+ 
   /* ─── PRICING ─── */
   .pricing-section { max-width: 640px; }
-
+ 
   .pricing-card {
     border: 1px solid var(--gold);
     padding: 3rem;
@@ -609,7 +609,7 @@
     overflow: hidden;
     background: linear-gradient(135deg, #0f0f0f 0%, #141209 100%);
   }
-
+ 
   .pricing-card::before {
     content: '';
     position: absolute;
@@ -617,7 +617,7 @@
     background: radial-gradient(ellipse at 50% 0%, rgba(240,180,41,.08), transparent 60%);
     pointer-events: none;
   }
-
+ 
   .promo-tag {
     display: inline-block;
     background: var(--gold);
@@ -631,14 +631,14 @@
     border-radius: 2px;
     margin-bottom: 1.5rem;
   }
-
+ 
   .pricing-card .price-old { font-size: 1rem; margin-bottom: .5rem; }
   .pricing-card .price-new { font-size: clamp(3.5rem, 10vw, 5.5rem); margin-bottom: .5rem; }
-
+ 
   .pricing-instalment { font-size: .85rem; color: var(--muted); margin-bottom: 2rem; }
-
+ 
   .pricing-card .cta-btn { display: block; width: 100%; animation: none; font-size: 1.05rem; }
-
+ 
   .pricing-features {
     margin-top: 2rem;
     display: flex;
@@ -646,7 +646,7 @@
     gap: .6rem;
     text-align: left;
   }
-
+ 
   .feat {
     display: flex;
     align-items: center;
@@ -654,9 +654,9 @@
     font-size: .875rem;
     color: var(--muted);
   }
-
+ 
   .feat::before { content: '✓'; color: var(--gold); font-weight: 700; font-size: .9rem; flex-shrink: 0; }
-
+ 
   /* ─── NOVO: Objection block ─── */
   .objection-block {
     background: var(--bg2);
@@ -664,15 +664,15 @@
     padding: 2rem;
     margin-top: 2rem;
   }
-
+ 
   .objection-item {
     padding: 1rem 0;
     border-bottom: 1px solid var(--border);
   }
-
+ 
   .objection-item:last-child { border-bottom: none; padding-bottom: 0; }
   .objection-item:first-child { padding-top: 0; }
-
+ 
   .objection-q {
     font-family: 'Syne', sans-serif;
     font-size: .9rem;
@@ -680,12 +680,12 @@
     color: var(--muted);
     margin-bottom: .4rem;
   }
-
+ 
   .objection-a { font-size: .875rem; color: var(--text); line-height: 1.6; }
-
+ 
   /* ─── GUARANTEE ─── */
   .guarantee-section { max-width: 640px; }
-
+ 
   .guarantee-box {
     border: 1px solid var(--border);
     padding: 2.5rem;
@@ -694,45 +694,45 @@
     align-items: flex-start;
     background: var(--bg2);
   }
-
+ 
   .guarantee-icon { font-size: 3rem; flex-shrink: 0; line-height: 1; }
-
+ 
   .guarantee-box h3 {
     font-family: 'Syne', sans-serif;
     font-size: 1.2rem;
     font-weight: 800;
     margin-bottom: .5rem;
   }
-
+ 
   .guarantee-box p { font-size: .875rem; color: var(--muted); line-height: 1.6; }
-
+ 
   /* ─── FOOTER CTA ─── */
   .footer-cta {
     background: var(--gold);
     padding: 4rem 1.5rem;
     text-align: center;
   }
-
+ 
   .footer-cta h2 { color: #000; margin-bottom: .75rem; font-size: clamp(2rem, 5vw, 3rem); }
-
+ 
   .footer-cta p {
     color: rgba(0,0,0,.6);
     font-size: .95rem;
     max-width: 500px;
     margin: 0 auto 1.75rem;
   }
-
+ 
   .footer-cta .cta-btn {
     background: #000;
     color: var(--gold);
     animation: none;
     box-shadow: 0 0 0 2px #000;
   }
-
+ 
   .footer-cta .cta-btn:hover { background: #111; box-shadow: 0 8px 30px rgba(0,0,0,.4); }
-
+ 
   .footer-note { margin-top: 1rem; font-size: .8rem; color: rgba(0,0,0,.5); }
-
+ 
   /* ─── DIVIDER ─── */
   .divider {
     width: 100%;
@@ -741,22 +741,22 @@
     max-width: 860px;
     margin: 0 auto;
   }
-
+ 
   /* ─── SCROLL ANIMATIONS ─── */
   .reveal {
     opacity: 0;
     transform: translateY(32px);
     transition: opacity .65s ease, transform .65s ease;
   }
-
+ 
   .reveal.visible { opacity: 1; transform: translateY(0); }
-
+ 
   .reveal-stagger > * {
     opacity: 0;
     transform: translateY(24px);
     transition: opacity .5s ease, transform .5s ease;
   }
-
+ 
   .reveal-stagger.visible > *:nth-child(1) { opacity: 1; transform: none; transition-delay: 0s; }
   .reveal-stagger.visible > *:nth-child(2) { opacity: 1; transform: none; transition-delay: .1s; }
   .reveal-stagger.visible > *:nth-child(3) { opacity: 1; transform: none; transition-delay: .2s; }
@@ -765,10 +765,10 @@
   .reveal-stagger.visible > *:nth-child(6) { opacity: 1; transform: none; transition-delay: .5s; }
   .reveal-stagger.visible > *:nth-child(7) { opacity: 1; transform: none; transition-delay: .6s; }
   .reveal-stagger.visible > *:nth-child(8) { opacity: 1; transform: none; transition-delay: .7s; }
-
+ 
   @keyframes fadeUp { from { opacity: 0; transform: translateY(24px); } to { opacity: 1; transform: none; } }
   @keyframes fadeDown { from { opacity: 0; transform: translateY(-16px); } to { opacity: 1; transform: none; } }
-
+ 
   /* ─── RESPONSIVE ─── */
   @media (max-width: 600px) {
     .pain-grid { grid-template-columns: 1fr; }
@@ -779,7 +779,7 @@
     .authority-block { flex-direction: column; }
     .social-proof-strip { gap: .75rem; }
   }
-
+ 
   /* ─── STICKY CTA ─── */
   .sticky-cta {
     position: fixed;
@@ -801,17 +801,17 @@
     transition: transform .4s cubic-bezier(.34,1.56,.64,1), box-shadow .3s;
     white-space: nowrap;
   }
-
+ 
   .sticky-cta.show { transform: translateX(-50%) translateY(0); }
   .sticky-cta:hover { box-shadow: 0 12px 50px rgba(240,180,41,.65); }
-
+ 
   ::-webkit-scrollbar { width: 4px; }
   ::-webkit-scrollbar-track { background: var(--bg); }
   ::-webkit-scrollbar-thumb { background: var(--gold); border-radius: 2px; }
 </style>
 </head>
 <body>
-
+ 
 <!-- TICKER -->
 <div class="ticker">
   <div class="ticker-inner">
@@ -827,27 +827,27 @@
     <span>🔒 ACESSO IMEDIATO</span>
   </div>
 </div>
-
+ 
 <!-- HERO -->
 <section class="hero" style="max-width:none; padding-top:5rem;">
   <canvas id="hero-canvas"></canvas>
   <div class="promo-badge">Promoção relâmpago — acesso imediato</div>
-
+ 
   <!-- NOVO: Qualificação de público -->
   <div class="for-whom">Para quem quer trabalhar com o digital mas não sabe por onde começar</div>
-
+ 
   <!-- NOVO: Headline focada na PROMESSA, não no nome -->
   <h1>
     Descubra qual habilidade digital<br>
     <em>te paga bem —</em><br>
     e aprenda a conseguir<br>seu primeiro cliente
   </h1>
-
+ 
   <!-- NOVO: Sub com especificidade real -->
   <p class="hero-sub">
     Em 8 módulos diretos, você descobre <strong>qual caminho no digital é certo para o seu perfil</strong>, aprende essa habilidade do zero e recebe os scripts exatos para fechar seu primeiro cliente — mesmo sem portfólio, mesmo sem experiência.
   </p>
-
+ 
   <!-- NOVO: Prova social rápida -->
   <div class="social-proof-strip">
     <div class="sp-item">🎓 <strong>8 módulos</strong> completos</div>
@@ -856,18 +856,18 @@
     <div class="sp-dot"></div>
     <div class="sp-item">⚡ <strong>Resultado em meses,</strong> não anos</div>
   </div>
-
+ 
   <div class="price-block">
     <p class="price-old">De R$ 97,00</p>
     <div class="price-new"><sup>R$</sup>47<small>,00</small></div>
   </div>
-
+ 
   <a href="https://pay.kiwify.com.br/rk4C6dl" class="cta-btn">
     Quero descobrir minha habilidade por R$47 →
   </a>
   <p class="guarantee-line">🔒 7 dias de garantia incondicional · Pagamento 100% seguro · Acesso vitalício</p>
 </section>
-
+ 
 <!-- COUNTDOWN -->
 <div class="countdown-bar">
   <p class="countdown-label">A oferta encerra em</p>
@@ -888,7 +888,7 @@
     </div>
   </div>
 </div>
-
+ 
 <!-- AUTORIDADE — NOVO -->
 <div class="divider"></div>
 <section>
@@ -910,7 +910,7 @@
     </div>
   </div>
 </section>
-
+ 
 <!-- PROBLEMA -->
 <div class="divider"></div>
 <section>
@@ -919,7 +919,7 @@
   <p style="color: var(--muted); max-width: 600px; margin-bottom: 0;" class="reveal">
     Não falta conteúdo na internet. Falta um caminho claro que diga: começa aqui, faz isso, depois disso. Sem isso, a maioria paralisa.
   </p>
-
+ 
   <div class="pain-grid reveal-stagger" style="margin-top: 2rem;">
     <div class="pain-item">
       <div class="pain-icon">😵</div>
@@ -943,7 +943,7 @@
     </div>
   </div>
 </section>
-
+ 
 <!-- O QUE VOCÊ VAI CONSEGUIR FAZER — NOVO -->
 <div class="divider"></div>
 <section>
@@ -952,7 +952,7 @@
   <p style="color: var(--muted); max-width: 600px;" class="reveal">
     Não é só conteúdo para assistir. É um plano de ação. Quando você terminar os 8 módulos, vai ter isso em mãos:
   </p>
-
+ 
   <div class="outcome-grid reveal-stagger">
     <div class="outcome-item">
       <div class="outcome-check">✓</div>
@@ -998,13 +998,13 @@
     </div>
   </div>
 </section>
-
+ 
 <!-- MÓDULOS -->
 <div class="divider"></div>
 <section>
   <div class="section-label reveal">Dentro dos 8 módulos</div>
   <h2 class="reveal">O conteúdo completo,<br><em>módulo por módulo.</em></h2>
-
+ 
   <div class="modules-grid reveal-stagger" style="margin-top: 2rem;">
     <div class="module-item">
       <span class="module-num">MOD 01</span>
@@ -1072,13 +1072,13 @@
     </div>
   </div>
 </section>
-
+ 
 <!-- BÔNUS -->
 <div class="divider"></div>
 <section>
   <div class="section-label reveal">Incluído no plano</div>
   <h2 class="reveal">Mais 3 bônus que <em>aceleram o resultado.</em></h2>
-
+ 
   <div class="bonus-grid">
     <div class="bonus-card reveal">
       <div class="bonus-num">Bônus 01</div>
@@ -1100,13 +1100,13 @@
     </div>
   </div>
 </section>
-
+ 
 <!-- OBJEÇÕES — NOVO -->
 <div class="divider"></div>
 <section>
   <div class="section-label reveal">Dúvidas comuns</div>
   <h2 class="reveal">Respostas diretas<br><em>sem rodeio.</em></h2>
-
+ 
   <div class="objection-block reveal">
     <div class="objection-item">
       <div class="objection-q">"Não tenho experiência nenhuma no digital. Isso é para mim?"</div>
@@ -1126,24 +1126,24 @@
     </div>
   </div>
 </section>
-
+ 
 <!-- PRICING -->
 <div class="divider"></div>
 <section class="pricing-section" style="margin: 0 auto;">
   <div class="section-label reveal">Oferta especial</div>
   <h2 class="reveal">Tudo isso por<br><em>R$47.</em></h2>
-
+ 
   <div class="pricing-card reveal" style="margin-top: 2rem;">
     <div class="promo-tag">⚡ Promoção por tempo limitado</div>
-
+ 
     <p class="price-old">De R$ 97,00</p>
     <div class="price-new"><sup>R$</sup>47<small>,00</small></div>
     <p class="pricing-instalment">pagamento único · acesso imediato e vitalício</p>
-
+ 
     <a href="https://pay.kiwify.com.br/rk4C6dl" class="cta-btn">
       Quero descobrir minha habilidade agora →
     </a>
-
+ 
     <div class="pricing-features">
       <div class="feat">8 módulos — do zero ao primeiro cliente</div>
       <div class="feat">Plano de 90 dias para dominar sua habilidade</div>
@@ -1155,7 +1155,7 @@
     </div>
   </div>
 </section>
-
+ 
 <!-- GARANTIA -->
 <div class="divider" style="margin-top: 3rem;"></div>
 <section class="guarantee-section" style="margin: 0 auto;">
@@ -1169,7 +1169,7 @@
     </div>
   </div>
 </section>
-
+ 
 <!-- FOOTER CTA -->
 <div class="footer-cta">
   <!-- NOVO: Headline de fechamento com urgência real -->
@@ -1180,12 +1180,12 @@
   </a>
   <p class="footer-note">🔒 Pagamento seguro · Acesso imediato · Garantia 7 dias · Sem pegadinhas</p>
 </div>
-
+ 
 <!-- STICKY CTA -->
 <a href="https://pay.kiwify.com.br/rk4C6dl" class="sticky-cta" id="sticky">
   ⚡ Descobrir minha habilidade — R$47
 </a>
-
+ 
 <script>
   // ─── 3D CANVAS BACKGROUND
   (function() {
@@ -1194,14 +1194,14 @@
     let W, H, scrollY = 0;
     const GOLD = 'rgba(240,180,41,';
     const COUNT = 90;
-
+ 
     function resize() {
       W = canvas.width = canvas.offsetWidth;
       H = canvas.height = canvas.offsetHeight;
     }
     resize();
     window.addEventListener('resize', resize);
-
+ 
     // Particles in 3D space
     const particles = Array.from({length: COUNT}, () => ({
       x: (Math.random() - 0.5) * 2,
@@ -1212,16 +1212,16 @@
       vz: Math.random() * 0.0008 + 0.0002,
       size: Math.random() * 1.5 + 0.5,
     }));
-
+ 
     // Grid lines in 3D
     const GRID_LINES = 10;
     let scrollOffset = 0;
     let targetScroll = 0;
-
+ 
     window.addEventListener('scroll', () => {
       targetScroll = window.scrollY;
     });
-
+ 
     function project(x, y, z) {
       const fov = 0.6;
       const depth = z + 0.01;
@@ -1230,12 +1230,12 @@
       const scale = fov / depth;
       return { px, py, scale };
     }
-
+ 
     function drawGrid(scrollOff) {
       const horizon = H * 0.52 + scrollOff * 0.04;
       const vp = { x: W / 2, y: horizon };
       const fade = 0.04;
-
+ 
       // Vertical grid lines
       for (let i = 0; i <= GRID_LINES; i++) {
         const t = i / GRID_LINES;
@@ -1249,7 +1249,7 @@
         ctx.lineWidth = 0.5;
         ctx.stroke();
       }
-
+ 
       // Horizontal grid lines with parallax
       const rows = 12;
       for (let i = 0; i < rows; i++) {
@@ -1266,7 +1266,7 @@
         ctx.stroke();
       }
     }
-
+ 
     function drawParticles(scrollOff) {
       for (const p of particles) {
         // Update
@@ -1275,34 +1275,34 @@
         p.z -= p.vz;
         // Slight scroll parallax: push z
         p.z -= scrollOff * 0.00001;
-
+ 
         if (p.z <= 0.01) {
           p.z = 1;
           p.x = (Math.random() - 0.5) * 2;
           p.y = (Math.random() - 0.5) * 2;
         }
         if (p.z > 1) p.z = 1;
-
+ 
         const { px, py, scale } = project(p.x, p.y, p.z);
         if (px < 0 || px > W || py < 0 || py > H) continue;
-
+ 
         const alpha = Math.min(1, scale * 0.5) * (1 - p.z) * 0.7;
         const r = p.size * scale * 6;
-
+ 
         ctx.beginPath();
         ctx.arc(px, py, Math.max(0.3, r), 0, Math.PI * 2);
         ctx.fillStyle = `${GOLD}${alpha.toFixed(3)})`;
         ctx.fill();
       }
     }
-
+ 
     function drawConnections() {
       // Connect nearby projected particles
       const projected = particles.map(p => {
         const { px, py, scale } = project(p.x, p.y, p.z);
         return { px, py, z: p.z, scale };
       });
-
+ 
       for (let i = 0; i < projected.length; i++) {
         for (let j = i + 1; j < projected.length; j++) {
           const a = projected[i], b = projected[j];
@@ -1320,22 +1320,22 @@
         }
       }
     }
-
+ 
     function draw(ts) {
       // Smooth scroll
       scrollOffset += (targetScroll - scrollOffset) * 0.08;
-
+ 
       ctx.clearRect(0, 0, W, H);
-
+ 
       drawGrid(scrollOffset);
       drawConnections();
       drawParticles(scrollOffset);
-
+ 
       requestAnimationFrame(draw);
     }
     requestAnimationFrame(draw);
   })();
-
+ 
   // ─── SCROLL REVEAL
   const revealEls = document.querySelectorAll('.reveal, .reveal-stagger');
   const observer = new IntersectionObserver((entries) => {
@@ -1347,7 +1347,7 @@
     });
   }, { threshold: 0.12 });
   revealEls.forEach(el => observer.observe(el));
-
+ 
   // ─── STICKY CTA
   const sticky = document.getElementById('sticky');
   const hero = document.querySelector('.hero');
@@ -1356,7 +1356,7 @@
     else sticky.classList.remove('show');
   }, { threshold: 0.2 });
   stickyObs.observe(hero);
-
+ 
   // ─── COUNTDOWN
   const stored = sessionStorage.getItem('cdEnd');
   let endTime;
@@ -1366,7 +1366,7 @@
     endTime = Date.now() + (23 * 60 * 60 + 59 * 60 + 47) * 1000;
     sessionStorage.setItem('cdEnd', endTime);
   }
-
+ 
   function tick() {
     const diff = Math.max(0, endTime - Date.now());
     const h = Math.floor(diff / 3600000);
