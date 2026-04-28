@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Do Zero ao Lucro — Oferta Especial R$47</title>
+<title>Do Zero ao Lucro — Descubra qual habilidade digital te paga bem (e como começar esta semana)</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;700;800&family=DM+Sans:ital,wght@0,300;0,400;0,500;1,300&display=swap" rel="stylesheet">
 <style>
@@ -19,7 +19,6 @@
   }
 
   *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-
   html { scroll-behavior: smooth; }
 
   body {
@@ -47,7 +46,6 @@
   .ticker-inner {
     display: inline-flex;
     animation: ticker 22s linear infinite;
-    gap: 0;
   }
   .ticker-inner span { padding: 0 2.5rem; }
   @keyframes ticker { from { transform: translateX(0) } to { transform: translateX(-50%) } }
@@ -108,32 +106,75 @@
 
   @keyframes pulse { 0%,100%{opacity:1;transform:scale(1)} 50%{opacity:.4;transform:scale(1.4)} }
 
+  /* ─── NOVO: Linha "Quem é para você" ─── */
+  .for-whom {
+    display: inline-block;
+    background: rgba(240,180,41,.1);
+    border: 1px solid rgba(240,180,41,.25);
+    border-radius: 4px;
+    padding: .4rem 1rem;
+    font-size: .8rem;
+    color: var(--gold);
+    letter-spacing: .06em;
+    margin-bottom: 1.5rem;
+    animation: fadeUp .8s .05s ease both;
+  }
+
   .hero h1 {
     font-family: 'Syne', sans-serif;
-    font-size: clamp(3rem, 10vw, 7rem);
+    font-size: clamp(2.2rem, 7vw, 5.5rem);
     font-weight: 800;
-    line-height: .92;
+    line-height: 1.0;
     letter-spacing: -.02em;
     margin-bottom: 1.5rem;
+    max-width: 820px;
     animation: fadeUp .8s .1s ease both;
   }
 
   .hero h1 em {
     font-style: normal;
     color: var(--gold);
-    display: block;
   }
 
   .hero-sub {
-    font-size: clamp(1rem, 2.5vw, 1.25rem);
+    font-size: clamp(1rem, 2.2vw, 1.2rem);
     font-weight: 300;
     color: #aaa;
-    max-width: 560px;
-    margin: 0 auto 2.5rem;
+    max-width: 580px;
+    margin: 0 auto 2rem;
     animation: fadeUp .8s .2s ease both;
+    line-height: 1.7;
   }
 
   .hero-sub strong { color: var(--text); font-weight: 500; }
+
+  /* ─── NOVO: Bloco de prova social rápida ─── */
+  .social-proof-strip {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1.5rem;
+    margin-bottom: 2rem;
+    animation: fadeUp .8s .25s ease both;
+    flex-wrap: wrap;
+  }
+
+  .sp-item {
+    display: flex;
+    align-items: center;
+    gap: .4rem;
+    font-size: .78rem;
+    color: var(--muted);
+    letter-spacing: .04em;
+  }
+
+  .sp-item strong { color: var(--text); }
+
+  .sp-dot {
+    width: 3px; height: 3px;
+    background: var(--border);
+    border-radius: 50%;
+  }
 
   .price-block {
     animation: fadeUp .8s .3s ease both;
@@ -297,6 +338,62 @@
     color: var(--gold);
   }
 
+  /* ─── NOVO: Bloco de autoridade ─── */
+  .authority-block {
+    background: var(--bg2);
+    border: 1px solid var(--border);
+    border-left: 3px solid var(--gold);
+    padding: 1.5rem 2rem;
+    margin-top: 2rem;
+    display: flex;
+    gap: 1.5rem;
+    align-items: flex-start;
+  }
+
+  .authority-avatar {
+    width: 52px;
+    height: 52px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, var(--gold), var(--gold-dim));
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: 'Syne', sans-serif;
+    font-weight: 800;
+    font-size: 1.1rem;
+    color: #000;
+    flex-shrink: 0;
+  }
+
+  .authority-text p {
+    font-size: .875rem;
+    color: var(--muted);
+    line-height: 1.6;
+  }
+
+  .authority-text strong {
+    display: block;
+    color: var(--text);
+    font-family: 'Syne', sans-serif;
+    font-weight: 700;
+    margin-bottom: .25rem;
+    font-size: .95rem;
+  }
+
+  .authority-stats {
+    display: flex;
+    gap: 1.5rem;
+    margin-top: .75rem;
+    flex-wrap: wrap;
+  }
+
+  .a-stat {
+    font-size: .75rem;
+    color: var(--muted);
+  }
+
+  .a-stat strong { color: var(--gold); font-size: .9rem; }
+
   /* ─── PROBLEMA ─── */
   .pain-grid {
     display: grid;
@@ -315,10 +412,7 @@
 
   .pain-item:hover { background: var(--bg3); }
 
-  .pain-icon {
-    font-size: 1.5rem;
-    margin-bottom: .75rem;
-  }
+  .pain-icon { font-size: 1.5rem; margin-bottom: .75rem; }
 
   .pain-item h3 {
     font-family: 'Syne', sans-serif;
@@ -328,6 +422,47 @@
   }
 
   .pain-item p { font-size: .875rem; color: var(--muted); line-height: 1.5; }
+
+  /* ─── NOVO: O que você vai saber fazer ─── */
+  .outcome-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem;
+    margin-top: 2rem;
+  }
+
+  .outcome-item {
+    display: flex;
+    gap: .75rem;
+    align-items: flex-start;
+    padding: 1.25rem;
+    border: 1px solid var(--border);
+    background: var(--bg2);
+    transition: border-color .3s;
+  }
+
+  .outcome-item:hover { border-color: rgba(240,180,41,.3); }
+
+  .outcome-check {
+    color: var(--gold);
+    font-weight: 700;
+    font-size: 1rem;
+    flex-shrink: 0;
+    margin-top: .1rem;
+  }
+
+  .outcome-item p {
+    font-size: .875rem;
+    color: var(--muted);
+    line-height: 1.5;
+  }
+
+  .outcome-item strong {
+    display: block;
+    color: var(--text);
+    font-size: .9rem;
+    margin-bottom: .2rem;
+  }
 
   /* ─── MODULES ─── */
   .modules-grid {
@@ -345,7 +480,6 @@
     grid-template-columns: auto 1fr;
     gap: 1.25rem;
     align-items: start;
-    cursor: pointer;
     transition: background .2s;
     position: relative;
   }
@@ -366,7 +500,15 @@
     font-family: 'Syne', sans-serif;
     font-size: 1rem;
     font-weight: 700;
-    margin-bottom: .35rem;
+    margin-bottom: .25rem;
+  }
+
+  .module-promise {
+    font-size: .75rem;
+    color: var(--gold);
+    font-weight: 500;
+    margin-bottom: .3rem;
+    letter-spacing: .03em;
   }
 
   .module-desc {
@@ -403,10 +545,7 @@
     transition: border-color .3s, transform .3s;
   }
 
-  .bonus-card:hover {
-    border-color: var(--gold);
-    transform: translateY(-3px);
-  }
+  .bonus-card:hover { border-color: var(--gold); transform: translateY(-3px); }
 
   .bonus-card::before {
     content: 'GRÁTIS';
@@ -440,19 +579,12 @@
 
   .bonus-card p { font-size: .825rem; color: var(--muted); line-height: 1.5; }
 
-  .bonus-value {
-    margin-top: .75rem;
-    font-size: .75rem;
-    color: var(--muted);
-  }
-
+  .bonus-value { margin-top: .75rem; font-size: .75rem; color: var(--muted); }
   .bonus-value s { margin-right: .25rem; }
   .bonus-value span { color: var(--gold); font-weight: 700; }
 
   /* ─── PRICING ─── */
-  .pricing-section {
-    max-width: 640px;
-  }
+  .pricing-section { max-width: 640px; }
 
   .pricing-card {
     border: 1px solid var(--gold);
@@ -485,28 +617,12 @@
     margin-bottom: 1.5rem;
   }
 
-  .pricing-card .price-old {
-    font-size: 1rem;
-    margin-bottom: .5rem;
-  }
+  .pricing-card .price-old { font-size: 1rem; margin-bottom: .5rem; }
+  .pricing-card .price-new { font-size: clamp(3.5rem, 10vw, 5.5rem); margin-bottom: .5rem; }
 
-  .pricing-card .price-new {
-    font-size: clamp(3.5rem, 10vw, 5.5rem);
-    margin-bottom: .5rem;
-  }
+  .pricing-instalment { font-size: .85rem; color: var(--muted); margin-bottom: 2rem; }
 
-  .pricing-instalment {
-    font-size: .85rem;
-    color: var(--muted);
-    margin-bottom: 2rem;
-  }
-
-  .pricing-card .cta-btn {
-    display: block;
-    width: 100%;
-    animation: none;
-    font-size: 1.05rem;
-  }
+  .pricing-card .cta-btn { display: block; width: 100%; animation: none; font-size: 1.05rem; }
 
   .pricing-features {
     margin-top: 2rem;
@@ -524,18 +640,36 @@
     color: var(--muted);
   }
 
-  .feat::before {
-    content: '✓';
-    color: var(--gold);
-    font-weight: 700;
-    font-size: .9rem;
-    flex-shrink: 0;
+  .feat::before { content: '✓'; color: var(--gold); font-weight: 700; font-size: .9rem; flex-shrink: 0; }
+
+  /* ─── NOVO: Objection block ─── */
+  .objection-block {
+    background: var(--bg2);
+    border: 1px solid var(--border);
+    padding: 2rem;
+    margin-top: 2rem;
   }
 
-  /* ─── GUARANTEE ─── */
-  .guarantee-section {
-    max-width: 640px;
+  .objection-item {
+    padding: 1rem 0;
+    border-bottom: 1px solid var(--border);
   }
+
+  .objection-item:last-child { border-bottom: none; padding-bottom: 0; }
+  .objection-item:first-child { padding-top: 0; }
+
+  .objection-q {
+    font-family: 'Syne', sans-serif;
+    font-size: .9rem;
+    font-weight: 700;
+    color: var(--muted);
+    margin-bottom: .4rem;
+  }
+
+  .objection-a { font-size: .875rem; color: var(--text); line-height: 1.6; }
+
+  /* ─── GUARANTEE ─── */
+  .guarantee-section { max-width: 640px; }
 
   .guarantee-box {
     border: 1px solid var(--border);
@@ -546,11 +680,7 @@
     background: var(--bg2);
   }
 
-  .guarantee-icon {
-    font-size: 3rem;
-    flex-shrink: 0;
-    line-height: 1;
-  }
+  .guarantee-icon { font-size: 3rem; flex-shrink: 0; line-height: 1; }
 
   .guarantee-box h3 {
     font-family: 'Syne', sans-serif;
@@ -568,10 +698,13 @@
     text-align: center;
   }
 
-  .footer-cta h2 {
-    color: #000;
-    margin-bottom: 1.5rem;
-    font-size: clamp(2rem, 5vw, 3rem);
+  .footer-cta h2 { color: #000; margin-bottom: .75rem; font-size: clamp(2rem, 5vw, 3rem); }
+
+  .footer-cta p {
+    color: rgba(0,0,0,.6);
+    font-size: .95rem;
+    max-width: 500px;
+    margin: 0 auto 1.75rem;
   }
 
   .footer-cta .cta-btn {
@@ -581,16 +714,9 @@
     box-shadow: 0 0 0 2px #000;
   }
 
-  .footer-cta .cta-btn:hover {
-    background: #111;
-    box-shadow: 0 8px 30px rgba(0,0,0,.4);
-  }
+  .footer-cta .cta-btn:hover { background: #111; box-shadow: 0 8px 30px rgba(0,0,0,.4); }
 
-  .footer-note {
-    margin-top: 1rem;
-    font-size: .8rem;
-    color: rgba(0,0,0,.5);
-  }
+  .footer-note { margin-top: 1rem; font-size: .8rem; color: rgba(0,0,0,.5); }
 
   /* ─── DIVIDER ─── */
   .divider {
@@ -608,10 +734,7 @@
     transition: opacity .65s ease, transform .65s ease;
   }
 
-  .reveal.visible {
-    opacity: 1;
-    transform: translateY(0);
-  }
+  .reveal.visible { opacity: 1; transform: translateY(0); }
 
   .reveal-stagger > * {
     opacity: 0;
@@ -628,16 +751,18 @@
   .reveal-stagger.visible > *:nth-child(7) { opacity: 1; transform: none; transition-delay: .6s; }
   .reveal-stagger.visible > *:nth-child(8) { opacity: 1; transform: none; transition-delay: .7s; }
 
-  /* ─── KEYFRAMES ─── */
   @keyframes fadeUp { from { opacity: 0; transform: translateY(24px); } to { opacity: 1; transform: none; } }
   @keyframes fadeDown { from { opacity: 0; transform: translateY(-16px); } to { opacity: 1; transform: none; } }
 
   /* ─── RESPONSIVE ─── */
   @media (max-width: 600px) {
     .pain-grid { grid-template-columns: 1fr; }
+    .outcome-grid { grid-template-columns: 1fr; }
     .guarantee-box { flex-direction: column; gap: 1rem; }
     .pricing-card { padding: 2rem 1.5rem; }
     section { padding: 3.5rem 1.25rem; }
+    .authority-block { flex-direction: column; }
+    .social-proof-strip { gap: .75rem; }
   }
 
   /* ─── STICKY CTA ─── */
@@ -665,7 +790,6 @@
   .sticky-cta.show { transform: translateX(-50%) translateY(0); }
   .sticky-cta:hover { box-shadow: 0 12px 50px rgba(240,180,41,.65); }
 
-  /* scroll bar */
   ::-webkit-scrollbar { width: 4px; }
   ::-webkit-scrollbar-track { background: var(--bg); }
   ::-webkit-scrollbar-thumb { background: var(--gold); border-radius: 2px; }
@@ -677,14 +801,14 @@
 <div class="ticker">
   <div class="ticker-inner">
     <span>🔥 OFERTA ESPECIAL POR TEMPO LIMITADO</span>
-    <span>⚡ R$47 — APENAS HOJE</span>
+    <span>⚡ R$47 — ACESSO COMPLETO</span>
     <span>✅ GARANTIA 7 DIAS</span>
-    <span>📈 DO ZERO AO LUCRO</span>
+    <span>📈 8 MÓDULOS DO ZERO AO PRIMEIRO REAL</span>
     <span>🔒 ACESSO IMEDIATO</span>
     <span>🔥 OFERTA ESPECIAL POR TEMPO LIMITADO</span>
-    <span>⚡ R$47 — APENAS HOJE</span>
+    <span>⚡ R$47 — ACESSO COMPLETO</span>
     <span>✅ GARANTIA 7 DIAS</span>
-    <span>📈 DO ZERO AO LUCRO</span>
+    <span>📈 8 MÓDULOS DO ZERO AO PRIMEIRO REAL</span>
     <span>🔒 ACESSO IMEDIATO</span>
   </div>
 </div>
@@ -693,14 +817,29 @@
 <section class="hero" style="max-width:none; padding-top:5rem;">
   <div class="promo-badge">Promoção relâmpago — acesso imediato</div>
 
+  <!-- NOVO: Qualificação de público -->
+  <div class="for-whom">Para quem quer trabalhar com o digital mas não sabe por onde começar</div>
+
+  <!-- NOVO: Headline focada na PROMESSA, não no nome -->
   <h1>
-    Do Zero<br>
-    <em>ao Lucro</em>
+    Descubra qual habilidade digital<br>
+    <em>te paga bem —</em><br>
+    e aprenda a conseguir<br>seu primeiro cliente
   </h1>
 
+  <!-- NOVO: Sub com especificidade real -->
   <p class="hero-sub">
-    O método completo para construir renda do zero em 2026 — <strong>8 módulos, sem enrolação, resultado em meses.</strong>
+    Em 8 módulos diretos, você descobre <strong>qual caminho no digital é certo para o seu perfil</strong>, aprende essa habilidade do zero e recebe os scripts exatos para fechar seu primeiro cliente — mesmo sem portfólio, mesmo sem experiência.
   </p>
+
+  <!-- NOVO: Prova social rápida -->
+  <div class="social-proof-strip">
+    <div class="sp-item">🎓 <strong>8 módulos</strong> completos</div>
+    <div class="sp-dot"></div>
+    <div class="sp-item">📋 <strong>Scripts prontos</strong> para copiar</div>
+    <div class="sp-dot"></div>
+    <div class="sp-item">⚡ <strong>Resultado em meses,</strong> não anos</div>
+  </div>
 
   <div class="price-block">
     <p class="price-old">De R$ 97,00</p>
@@ -708,9 +847,9 @@
   </div>
 
   <a href="https://pay.kiwify.com.br/rk4C6dl" class="cta-btn">
-    Quero Acesso por R$47 →
+    Quero descobrir minha habilidade por R$47 →
   </a>
-  <p class="guarantee-line">🔒 7 dias de garantia incondicional · Pagamento 100% seguro</p>
+  <p class="guarantee-line">🔒 7 dias de garantia incondicional · Pagamento 100% seguro · Acesso vitalício</p>
 </section>
 
 <!-- COUNTDOWN -->
@@ -734,35 +873,112 @@
   </div>
 </div>
 
+<!-- AUTORIDADE — NOVO -->
+<div class="divider"></div>
+<section>
+  <div class="section-label reveal">Quem criou isso</div>
+  <h2 class="reveal">Feito por quem <em>já viveu</em> o que você está passando.</h2>
+  <p style="color: var(--muted); max-width: 600px;" class="reveal">
+    Esse material não saiu de uma teoria. Saiu de anos trabalhando no mercado digital — errando, ajustando e aprendendo o que realmente funciona para quem começa do zero.
+  </p>
+  <div class="authority-block reveal">
+    <div class="authority-avatar">DZ</div>
+    <div class="authority-text">
+      <strong>Criador do Do Zero ao Lucro</strong>
+      <p>Profissional com experiência em vendas, tráfego pago e marketing digital. Esse material reúne o mapa que eu precisava ter quando comecei — sem enrolação, sem teoria vazia, com os passos que realmente funcionam.</p>
+      <div class="authority-stats">
+        <div class="a-stat"><strong>+100K</strong><br>em vendas low ticket</div>
+        <div class="a-stat"><strong>Anos</strong><br>no mercado digital</div>
+        <div class="a-stat"><strong>8 módulos</strong><br>de conteúdo prático</div>
+      </div>
+    </div>
+  </div>
+</section>
+
 <!-- PROBLEMA -->
 <div class="divider"></div>
 <section>
-  <div class="section-label reveal">O problema</div>
-  <h2 class="reveal">Você não é preguiçoso.<br><em>Falta o mapa certo.</em></h2>
+  <div class="section-label reveal">O problema real</div>
+  <h2 class="reveal">Você quer entrar no digital.<br><em>Mas ninguém te mostra o caminho.</em></h2>
   <p style="color: var(--muted); max-width: 600px; margin-bottom: 0;" class="reveal">
-    Enquanto alguns aprendiam sobre dinheiro e habilidades que o mercado paga bem — a maioria aprende a ser funcionário. Não é sua culpa. Mas existe uma saída.
+    Não falta conteúdo na internet. Falta um caminho claro que diga: começa aqui, faz isso, depois disso. Sem isso, a maioria paralisa.
   </p>
 
   <div class="pain-grid reveal-stagger" style="margin-top: 2rem;">
     <div class="pain-item">
-      <div class="pain-icon">💸</div>
-      <h3>Trabalha muito e sobra pouco</h3>
-      <p>Você troca horas por dinheiro, mas o dinheiro nunca chega no fim do mês.</p>
+      <div class="pain-icon">😵</div>
+      <h3>Informação demais, clareza zero</h3>
+      <p>Cada guru fala uma coisa diferente. YouTube, Instagram, podcast — conteúdo infinito, mas você continua no mesmo lugar.</p>
     </div>
     <div class="pain-item">
       <div class="pain-icon">🎯</div>
-      <h3>Não sabe por onde começar</h3>
-      <p>Cada guru fala uma coisa diferente. Falta um caminho claro.</p>
+      <h3>Não sabe qual área escolher</h3>
+      <p>Tráfego pago? Copywriting? Edição de vídeo? Sem alguém para te orientar, você fica em dúvida e não começa nada.</p>
+    </div>
+    <div class="pain-item">
+      <div class="pain-icon">🔄</div>
+      <h3>Aprende mas não age</h3>
+      <p>Você consome conteúdo, anota tudo, mas na hora de ir atrás do primeiro cliente, trava. Falta o passo a passo concreto.</p>
     </div>
     <div class="pain-item">
       <div class="pain-icon">⏰</div>
-      <h3>O tempo está passando</h3>
-      <p>Vê pessoas crescendo e fica se perguntando o que elas sabem que você não.</p>
+      <h3>Vê outros crescendo</h3>
+      <p>Pessoas sem mais estudo que você ganhando bem no digital. A diferença não é talento — é ter o mapa certo na hora certa.</p>
     </div>
-    <div class="pain-item">
-      <div class="pain-icon">😤</div>
-      <h3>Cansado de promessas</h3>
-      <p>Já viu muita coisa que prometia e não entregou nada de concreto.</p>
+  </div>
+</section>
+
+<!-- O QUE VOCÊ VAI CONSEGUIR FAZER — NOVO -->
+<div class="divider"></div>
+<section>
+  <div class="section-label reveal">O que muda depois</div>
+  <h2 class="reveal">Sai sabendo <em>exatamente</em><br>o que fazer a seguir.</h2>
+  <p style="color: var(--muted); max-width: 600px;" class="reveal">
+    Não é só conteúdo para assistir. É um plano de ação. Quando você terminar os 8 módulos, vai ter isso em mãos:
+  </p>
+
+  <div class="outcome-grid reveal-stagger">
+    <div class="outcome-item">
+      <div class="outcome-check">✓</div>
+      <div>
+        <strong>Sua habilidade escolhida</strong>
+        <p>Sabe exatamente em qual área focar — tráfego, copy, edição, vendas ou social media — baseado no seu perfil.</p>
+      </div>
+    </div>
+    <div class="outcome-item">
+      <div class="outcome-check">✓</div>
+      <div>
+        <strong>Um plano de aprendizado de 90 dias</strong>
+        <p>Sabe o que estudar, em que ordem e como montar portfólio mesmo sem ter clientes ainda.</p>
+      </div>
+    </div>
+    <div class="outcome-item">
+      <div class="outcome-check">✓</div>
+      <div>
+        <strong>Scripts para abordar clientes</strong>
+        <p>Mensagens prontas, testadas, para conseguir os primeiros clientes via WhatsApp e Instagram — sem soar desesperado.</p>
+      </div>
+    </div>
+    <div class="outcome-item">
+      <div class="outcome-check">✓</div>
+      <div>
+        <strong>Um plano financeiro básico</strong>
+        <p>Sabe como organizar o dinheiro que vai entrar para não cair nas armadilhas que mantêm a maioria no zero.</p>
+      </div>
+    </div>
+    <div class="outcome-item">
+      <div class="outcome-check">✓</div>
+      <div>
+        <strong>Renda imediata enquanto aprende</strong>
+        <p>Formas de gerar dinheiro agora, mesmo sem ter a habilidade pronta ainda — para não precisar depender de resultado imediato.</p>
+      </div>
+    </div>
+    <div class="outcome-item">
+      <div class="outcome-check">✓</div>
+      <div>
+        <strong>O plano de 2 anos completo</strong>
+        <p>Mês a mês, o que fazer para sair do zero e chegar na independência financeira real — sem pressa, sem pular etapas.</p>
+      </div>
     </div>
   </div>
 </section>
@@ -770,14 +986,15 @@
 <!-- MÓDULOS -->
 <div class="divider"></div>
 <section>
-  <div class="section-label reveal">O conteúdo</div>
-  <h2 class="reveal">8 módulos.<br><em>Um caminho.</em></h2>
+  <div class="section-label reveal">Dentro dos 8 módulos</div>
+  <h2 class="reveal">O conteúdo completo,<br><em>módulo por módulo.</em></h2>
 
   <div class="modules-grid reveal-stagger" style="margin-top: 2rem;">
     <div class="module-item">
       <span class="module-num">MOD 01</span>
       <div>
         <div class="module-title">Mentalidade de Quem Vence</div>
+        <div class="module-promise">→ Entende por que você não avançou até hoje — e destrói esse bloqueio</div>
         <p class="module-desc">Por que você está pobre (sem julgamento, com solução). Como o dinheiro funciona de verdade. Construindo a identidade de quem prospera.</p>
       </div>
     </div>
@@ -785,6 +1002,7 @@
       <span class="module-num">MOD 02</span>
       <div>
         <div class="module-title">Estabilidade Antes de Escala</div>
+        <div class="module-promise">→ Gera renda agora, mesmo sem habilidade pronta</div>
         <p class="module-desc">Como gerar renda imediata do zero. Os melhores bicos que pagam rápido em 2026. Como cortar gastos sem sofrer e montar sua reserva.</p>
       </div>
     </div>
@@ -792,6 +1010,7 @@
       <span class="module-num">MOD 03</span>
       <div>
         <div class="module-title">Escolhendo Sua Habilidade</div>
+        <div class="module-promise">→ Descobre qual caminho é certo para o seu perfil</div>
         <p class="module-desc">As 5 habilidades mais valiosas do mercado. Tráfego pago, copywriting ou vendas — como descobrir qual é a certa pra você.</p>
       </div>
     </div>
@@ -799,6 +1018,7 @@
       <span class="module-num">MOD 04</span>
       <div>
         <div class="module-title">Aprendendo em Velocidade Máxima</div>
+        <div class="module-promise">→ Domina a habilidade em 90 dias, não em anos</div>
         <p class="module-desc">Como aprender qualquer coisa 3x mais rápido. O método de 90 dias para dominar uma habilidade e construir portfólio sem clientes.</p>
       </div>
     </div>
@@ -806,6 +1026,7 @@
       <span class="module-num">MOD 05</span>
       <div>
         <div class="module-title">Primeiros Clientes</div>
+        <div class="module-promise">→ O módulo mais importante: fecha os primeiros clientes do zero</div>
         <p class="module-desc">Como vender mesmo sem experiência. Scripts de abordagem que funcionam. Onde encontrar clientes sem gastar nada e como precificar seu trabalho.</p>
       </div>
     </div>
@@ -813,6 +1034,7 @@
       <span class="module-num">MOD 06</span>
       <div>
         <div class="module-title">Escalando Resultados</div>
+        <div class="module-promise">→ Para de trocar horas por dinheiro e cria seu primeiro sistema</div>
         <p class="module-desc">Da hora trocada por dinheiro para o sistema. Como cobrar mais pelo mesmo trabalho. Criando a primeira fonte de renda passiva.</p>
       </div>
     </div>
@@ -820,6 +1042,7 @@
       <span class="module-num">MOD 07</span>
       <div>
         <div class="module-title">Educação Financeira Real</div>
+        <div class="module-promise">→ Não perde o dinheiro que vai começar a ganhar</div>
         <p class="module-desc">O que não ensinam na escola. Juros compostos, onde colocar o primeiro dinheiro e armadilhas que mantêm você pobre.</p>
       </div>
     </div>
@@ -827,6 +1050,7 @@
       <span class="module-num">MOD 08</span>
       <div>
         <div class="module-title">Sustentando o Crescimento</div>
+        <div class="module-promise">→ Tem o plano de 2 anos completo em mãos</div>
         <p class="module-desc">Como manter disciplina quando a empolgação passa. Construindo rede de contatos e o plano de 2 anos para liberdade real.</p>
       </div>
     </div>
@@ -837,26 +1061,52 @@
 <div class="divider"></div>
 <section>
   <div class="section-label reveal">Incluído no plano</div>
-  <h2 class="reveal">Bônus que <em>valem o dobro.</em></h2>
+  <h2 class="reveal">Mais 3 bônus que <em>aceleram o resultado.</em></h2>
 
   <div class="bonus-grid">
     <div class="bonus-card reveal">
       <div class="bonus-num">Bônus 01</div>
       <h3>Planilha de Controle Financeiro</h3>
-      <p>Pronta pra usar, controla entradas, saídas, metas e investimentos. Simples o suficiente pra quem odeia planilha.</p>
+      <p>Pronta pra usar. Controla entradas, saídas, metas e investimentos. Simples o suficiente pra quem odeia planilha — e essencial pra não perder o dinheiro que vai começar a entrar.</p>
       <div class="bonus-value"><s>R$97</s><span>GRÁTIS</span></div>
     </div>
     <div class="bonus-card reveal">
       <div class="bonus-num">Bônus 02</div>
       <h3>10 Scripts de Vendas Prontos</h3>
-      <p>Scripts de abordagem testados para conseguir clientes via WhatsApp, Instagram e e-mail. Copia, adapta e envia.</p>
+      <p>Scripts de abordagem testados para conseguir clientes via WhatsApp, Instagram e e-mail. Você copia, adapta para o seu negócio e envia — sem precisar inventar nada do zero.</p>
       <div class="bonus-value"><s>R$147</s><span>GRÁTIS</span></div>
     </div>
     <div class="bonus-card reveal">
       <div class="bonus-num">Bônus 03</div>
       <h3>Comunidade Exclusiva</h3>
-      <p>Grupo privado com outros alunos, lives mensais de perguntas e respostas, e suporte direto para dúvidas.</p>
+      <p>Grupo privado com outros alunos, lives mensais de perguntas e respostas, e suporte direto. Para quando você travar em algum ponto e precisar de alguém que já passou por isso.</p>
       <div class="bonus-value"><s>R$197</s><span>GRÁTIS</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- OBJEÇÕES — NOVO -->
+<div class="divider"></div>
+<section>
+  <div class="section-label reveal">Dúvidas comuns</div>
+  <h2 class="reveal">Respostas diretas<br><em>sem rodeio.</em></h2>
+
+  <div class="objection-block reveal">
+    <div class="objection-item">
+      <div class="objection-q">"Não tenho experiência nenhuma no digital. Isso é para mim?"</div>
+      <div class="objection-a">Sim. O material foi feito exatamente para quem está começando do zero. O Módulo 3 inclusive te ajuda a descobrir qual área combina com o seu perfil — você não precisa saber isso antes de comprar.</div>
+    </div>
+    <div class="objection-item">
+      <div class="objection-q">"Tenho pouco tempo livre. Consigo aplicar isso?"</div>
+      <div class="objection-a">Com 1 a 2 horas por dia você consegue estudar e aplicar. O Módulo 4 mostra exatamente como montar uma rotina de aprendizado que funciona mesmo para quem trabalha durante o dia.</div>
+    </div>
+    <div class="objection-item">
+      <div class="objection-q">"Já vi muito curso que prometeu e não entregou."</div>
+      <div class="objection-a">Justo. Por isso tem garantia de 7 dias. Você acessa o conteúdo completo, lê, analisa. Se não fizer sentido, pede o reembolso — sem burocracia, sem questionamento. O risco é 100% nosso.</div>
+    </div>
+    <div class="objection-item">
+      <div class="objection-q">"Quanto tempo até ver resultado?"</div>
+      <div class="objection-a">Depende da sua habilidade escolhida e da sua dedicação. O Módulo 4 apresenta um método de 90 dias para dominar a habilidade, e o Módulo 5 já te prepara para abordar os primeiros clientes antes de terminar esse período.</div>
     </div>
   </div>
 </section>
@@ -875,13 +1125,14 @@
     <p class="pricing-instalment">pagamento único · acesso imediato e vitalício</p>
 
     <a href="https://pay.kiwify.com.br/rk4C6dl" class="cta-btn">
-      Garantir meu acesso agora →
+      Quero descobrir minha habilidade agora →
     </a>
 
     <div class="pricing-features">
-      <div class="feat">8 módulos completos — do zero ao lucro</div>
+      <div class="feat">8 módulos — do zero ao primeiro cliente</div>
+      <div class="feat">Plano de 90 dias para dominar sua habilidade</div>
+      <div class="feat">Scripts prontos para fechar clientes (valor R$147)</div>
       <div class="feat">Planilha de controle financeiro (valor R$97)</div>
-      <div class="feat">10 scripts de vendas prontos (valor R$147)</div>
       <div class="feat">Comunidade exclusiva + lives mensais (valor R$197)</div>
       <div class="feat">Acesso vitalício e futuras atualizações</div>
       <div class="feat">Garantia incondicional de 7 dias</div>
@@ -895,9 +1146,9 @@
   <div class="guarantee-box reveal">
     <div class="guarantee-icon">🛡️</div>
     <div>
-      <h3>Garantia de 7 dias</h3>
+      <h3>Garantia de 7 dias — sem letra miúda</h3>
       <p>
-        Se por qualquer motivo você não ficar satisfeito, basta enviar um e-mail em até 7 dias e devolvemos 100% do seu dinheiro. Sem burocracia, sem perguntas. O risco é todo nosso.
+        Acesse todo o conteúdo. Leia os módulos. Use os scripts. Se por qualquer motivo você não ficar satisfeito, basta enviar um e-mail em até 7 dias e devolvemos 100% do seu dinheiro. Sem burocracia, sem perguntas. O risco é todo nosso — não seu.
       </p>
     </div>
   </div>
@@ -905,16 +1156,18 @@
 
 <!-- FOOTER CTA -->
 <div class="footer-cta">
-  <h2>A decisão certa<br>está aqui.</h2>
+  <!-- NOVO: Headline de fechamento com urgência real -->
+  <h2>Você vai continuar<br>sem saber por onde começar?</h2>
+  <p>Por R$47 — menos que um almoço — você tem o mapa completo para descobrir sua habilidade no digital e conseguir seu primeiro cliente.</p>
   <a href="https://pay.kiwify.com.br/rk4C6dl" class="cta-btn" style="animation:none;">
-    Quero mudar minha vida por R$47 →
+    Sim, quero meu acesso por R$47 →
   </a>
-  <p class="footer-note">🔒 Pagamento seguro · Acesso imediato · Garantia 7 dias</p>
+  <p class="footer-note">🔒 Pagamento seguro · Acesso imediato · Garantia 7 dias · Sem pegadinhas</p>
 </div>
 
 <!-- STICKY CTA -->
 <a href="https://pay.kiwify.com.br/rk4C6dl" class="sticky-cta" id="sticky">
-  ⚡ Garantir R$47 agora
+  ⚡ Descobrir minha habilidade — R$47
 </a>
 
 <script>
@@ -939,13 +1192,12 @@
   }, { threshold: 0.2 });
   stickyObs.observe(hero);
 
-  // ─── COUNTDOWN (23h59m + random seconds for urgency)
+  // ─── COUNTDOWN
   const stored = sessionStorage.getItem('cdEnd');
   let endTime;
   if (stored) {
     endTime = parseInt(stored);
   } else {
-    // 23 hours 59 minutes from now
     endTime = Date.now() + (23 * 60 * 60 + 59 * 60 + 47) * 1000;
     sessionStorage.setItem('cdEnd', endTime);
   }
