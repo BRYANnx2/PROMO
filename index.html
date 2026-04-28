@@ -122,18 +122,33 @@
 
   .hero h1 {
     font-family: 'Syne', sans-serif;
-    font-size: clamp(2.2rem, 7vw, 5.5rem);
+    font-size: clamp(1.6rem, 3.8vw, 3.2rem);
     font-weight: 800;
-    line-height: 1.0;
+    line-height: 1.12;
     letter-spacing: -.02em;
     margin-bottom: 1.5rem;
-    max-width: 820px;
+    max-width: 680px;
     animation: fadeUp .8s .1s ease both;
   }
 
   .hero h1 em {
     font-style: normal;
     color: var(--gold);
+  }
+
+  /* ─── 3D CANVAS ─── */
+  #hero-canvas {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: 0;
+  }
+
+  .hero > *:not(#hero-canvas) {
+    position: relative;
+    z-index: 1;
   }
 
   .hero-sub {
@@ -815,6 +830,7 @@
 
 <!-- HERO -->
 <section class="hero" style="max-width:none; padding-top:5rem;">
+  <canvas id="hero-canvas"></canvas>
   <div class="promo-badge">Promoção relâmpago — acesso imediato</div>
 
   <!-- NOVO: Qualificação de público -->
@@ -1171,6 +1187,155 @@
 </a>
 
 <script>
+  // ─── 3D CANVAS BACKGROUND
+  (function() {
+    const canvas = document.getElementById('hero-canvas');
+    const ctx = canvas.getContext('2d');
+    let W, H, scrollY = 0;
+    const GOLD = 'rgba(240,180,41,';
+    const COUNT = 90;
+
+    function resize() {
+      W = canvas.width = canvas.offsetWidth;
+      H = canvas.height = canvas.offsetHeight;
+    }
+    resize();
+    window.addEventListener('resize', resize);
+
+    // Particles in 3D space
+    const particles = Array.from({length: COUNT}, () => ({
+      x: (Math.random() - 0.5) * 2,
+      y: (Math.random() - 0.5) * 2,
+      z: Math.random(),
+      vx: (Math.random() - 0.5) * 0.0003,
+      vy: (Math.random() - 0.5) * 0.0003,
+      vz: Math.random() * 0.0008 + 0.0002,
+      size: Math.random() * 1.5 + 0.5,
+    }));
+
+    // Grid lines in 3D
+    const GRID_LINES = 10;
+    let scrollOffset = 0;
+    let targetScroll = 0;
+
+    window.addEventListener('scroll', () => {
+      targetScroll = window.scrollY;
+    });
+
+    function project(x, y, z) {
+      const fov = 0.6;
+      const depth = z + 0.01;
+      const px = (x / depth) * fov * Math.min(W, H) * 0.5 + W * 0.5;
+      const py = (y / depth) * fov * Math.min(W, H) * 0.5 + H * 0.5;
+      const scale = fov / depth;
+      return { px, py, scale };
+    }
+
+    function drawGrid(scrollOff) {
+      const horizon = H * 0.52 + scrollOff * 0.04;
+      const vp = { x: W / 2, y: horizon };
+      const fade = 0.04;
+
+      // Vertical grid lines
+      for (let i = 0; i <= GRID_LINES; i++) {
+        const t = i / GRID_LINES;
+        const bx = W * t;
+        const alpha = fade * (1 - Math.abs(t - 0.5) * 1.5);
+        if (alpha <= 0) continue;
+        ctx.beginPath();
+        ctx.moveTo(vp.x, vp.y);
+        ctx.lineTo(bx, H);
+        ctx.strokeStyle = `rgba(240,180,41,${Math.max(0, alpha)})`;
+        ctx.lineWidth = 0.5;
+        ctx.stroke();
+      }
+
+      // Horizontal grid lines with parallax
+      const rows = 12;
+      for (let i = 0; i < rows; i++) {
+        const p = (i / rows);
+        const ypos = horizon + Math.pow(p, 1.8) * (H - horizon);
+        const xLeft = vp.x - (vp.x) * Math.pow(p, 0.7);
+        const xRight = vp.x + (W - vp.x) * Math.pow(p, 0.7);
+        const alpha = fade * p * 1.5;
+        ctx.beginPath();
+        ctx.moveTo(xLeft, ypos);
+        ctx.lineTo(xRight, ypos);
+        ctx.strokeStyle = `rgba(240,180,41,${Math.max(0, alpha)})`;
+        ctx.lineWidth = 0.4;
+        ctx.stroke();
+      }
+    }
+
+    function drawParticles(scrollOff) {
+      for (const p of particles) {
+        // Update
+        p.x += p.vx;
+        p.y += p.vy;
+        p.z -= p.vz;
+        // Slight scroll parallax: push z
+        p.z -= scrollOff * 0.00001;
+
+        if (p.z <= 0.01) {
+          p.z = 1;
+          p.x = (Math.random() - 0.5) * 2;
+          p.y = (Math.random() - 0.5) * 2;
+        }
+        if (p.z > 1) p.z = 1;
+
+        const { px, py, scale } = project(p.x, p.y, p.z);
+        if (px < 0 || px > W || py < 0 || py > H) continue;
+
+        const alpha = Math.min(1, scale * 0.5) * (1 - p.z) * 0.7;
+        const r = p.size * scale * 6;
+
+        ctx.beginPath();
+        ctx.arc(px, py, Math.max(0.3, r), 0, Math.PI * 2);
+        ctx.fillStyle = `${GOLD}${alpha.toFixed(3)})`;
+        ctx.fill();
+      }
+    }
+
+    function drawConnections() {
+      // Connect nearby projected particles
+      const projected = particles.map(p => {
+        const { px, py, scale } = project(p.x, p.y, p.z);
+        return { px, py, z: p.z, scale };
+      });
+
+      for (let i = 0; i < projected.length; i++) {
+        for (let j = i + 1; j < projected.length; j++) {
+          const a = projected[i], b = projected[j];
+          const dx = a.px - b.px, dy = a.py - b.py;
+          const dist = Math.sqrt(dx*dx + dy*dy);
+          if (dist < 80) {
+            const alpha = (1 - dist / 80) * 0.04 * (1 - a.z) * (1 - b.z);
+            ctx.beginPath();
+            ctx.moveTo(a.px, a.py);
+            ctx.lineTo(b.px, b.py);
+            ctx.strokeStyle = `${GOLD}${alpha.toFixed(3)})`;
+            ctx.lineWidth = 0.5;
+            ctx.stroke();
+          }
+        }
+      }
+    }
+
+    function draw(ts) {
+      // Smooth scroll
+      scrollOffset += (targetScroll - scrollOffset) * 0.08;
+
+      ctx.clearRect(0, 0, W, H);
+
+      drawGrid(scrollOffset);
+      drawConnections();
+      drawParticles(scrollOffset);
+
+      requestAnimationFrame(draw);
+    }
+    requestAnimationFrame(draw);
+  })();
+
   // ─── SCROLL REVEAL
   const revealEls = document.querySelectorAll('.reveal, .reveal-stagger');
   const observer = new IntersectionObserver((entries) => {
